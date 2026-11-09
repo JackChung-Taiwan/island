@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e9f5f0">
+  <meta name="description" content="翊華兒童程式創意冒險群島：探索 Minecraft、MakeCode、Roblox、AI 與 STEAM，完成互動實作挑戰。">
+  <title>翊華兒童程式｜創意冒險群島</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="翊華兒童程式冒險群島首頁" id="brand-home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-name"><strong>翊華兒童程式</strong><small>YIHWA CODING LAB</small></span>
+      </a>
+      <nav class="topnav" aria-label="網站主選單">
+        <button class="nav-link active" id="nav-explore" type="button">探索群島</button>
+        <button class="nav-link" id="nav-challenges" type="button">任務護照 <span id="nav-count">0/12</span></button>
+        <a class="nav-link nav-external" href="https://sites.google.com/view/yihwa-coding/index" target="_blank" rel="noopener noreferrer">課程官網 <span aria-hidden="true">↗</span></a>
+      </nav>
+      <button class="header-cta" id="contact-button" type="button">了解課程 <span>↗</span></button>
+    </header>
+
+    <main class="experience" id="home">
+      <div class="sky-background" aria-hidden="true"><div class="halo halo-1"></div><div class="halo halo-2"></div><div class="sky-dot dot-1"></div><div class="sky-dot dot-2"></div></div>
+      <canvas id="scene" aria-label="可旋轉及點選的翊華兒童程式浮空島立體地圖"></canvas>
+      <div id="island-labels" class="island-labels" aria-label="島嶼地圖標籤"></div>
+
+      <section class="intro-card" aria-labelledby="hero-title">
+        <div class="section-kicker"><span class="kicker-line"></span> 3D LEARNING WORLD <span class="kicker-dot">●</span> 創意探索計畫</div>
+        <h1 id="hero-title">讓想像力<br>成為<span class="highlight">創造力<span class="underline-stroke"></span></span></h1>
+        <p class="lead">從 Minecraft 到 Roblox，從 AI 科學到創客實作。踏上 12 座學習島，探索程式的無限可能。</p>
+        <div class="intro-actions">
+          <button type="button" class="button-primary" id="start-explore">開始探索 <span class="button-arrow">↗</span></button>
+          <button type="button" class="button-text" id="start-tour">▶ 自動導覽</button>
+        </div>
+        <div class="intro-rule"></div>
+        <div class="intro-stats"><div><strong>12<span>座</span></strong><small>主題學習島</small></div><div><strong>12<span>題</span></strong><small>互動小挑戰</small></div><div><strong id="hero-progress">0<span>/12</span></strong><small>已完成任務</small></div></div>
+        <div class="hint-line"><span class="mouse-outline" aria-hidden="true"></span><span>拖曳旋轉視角 · 滾輪縮放 · 點選島嶼</span></div>
+      </section>
+
+      <div class="scene-toolbar" role="group" aria-label="地圖操作工具">
+        <button type="button" title="放大" aria-label="放大" id="zoom-in">＋</button>
+        <button type="button" title="縮小" aria-label="縮小" id="zoom-out">－</button>
+        <span class="toolbar-line"></span>
+        <button type="button" title="返回全景" aria-label="返回全景" id="overview">⌂</button>
+      </div>
+      <div class="world-caption"><span class="world-caption-icon">◈</span> YIHWA SKY ISLANDS <span class="world-caption-muted">/ 互動體驗版 v1.0</span></div>
+
+      <aside class="course-panel" id="course-panel" aria-live="polite">
+        <div class="panel-top"><div class="panel-location"><span class="location-dot"></span> 目前探索島嶼 <span class="panel-step" id="panel-step">01 / 12</span></div><button type="button" id="panel-close" class="panel-close" title="收合介紹" aria-label="收合介紹">×</button></div>
+        <div class="panel-illustration" id="panel-illustration"><div class="panel-art-glow"></div><div class="panel-icon" id="panel-icon">✦</div><div class="panel-art-ring ring-a"></div><div class="panel-art-ring ring-b"></div><span class="panel-art-number" id="panel-art-number">ISLAND 01</span></div>
+        <div class="panel-main">
+          <div class="course-category" id="course-category">創意啟航 · START HERE</div>
+          <h2 id="course-name">翊華創意主島</h2>
+          <p id="course-description">探索第一座浮空島，認識動手做、玩中學的程式學習方式。</p>
+          <div class="course-tags" id="course-tags"></div>
+          <div class="tabbar" role="tablist" aria-label="課程資訊切換"><button class="tab active" type="button" role="tab" aria-selected="true" id="tab-learn">課程探索</button><button class="tab" type="button" role="tab" aria-selected="false" id="tab-task">實作挑戰 <span class="tab-star">✦</span></button></div>
+          <div id="learn-content" class="tab-content">
+            <div class="content-heading"><span class="heading-icon">▤</span> 這座島會學到什麼？</div>
+            <ul class="learn-list" id="learn-list"></ul>
+            <div class="outcome-box"><span class="outcome-label">作品靈感</span><div id="outcome-text"></div></div>
+            <button type="button" class="button-dark" id="go-task">挑戰這座島 <span aria-hidden="true">→</span></button>
+          </div>
+          <div id="task-content" class="tab-content is-hidden">
+            <div class="challenge-header"><span class="challenge-mark">?</span><div><div class="challenge-overline">小小程式冒險家</div><div class="challenge-heading">任務挑戰</div></div></div>
+            <p class="challenge-question" id="challenge-question"></p>
+            <div class="answer-list" id="answers"></div>
+            <div class="answer-feedback" id="answer-feedback" aria-live="polite"></div>
+            <div class="challenge-footnote">互動示範題庫 · 非正式課程測驗</div>
+          </div>
+        </div>
+        <div class="panel-footer"><button class="panel-arrow" id="prev-island" aria-label="上一座島">←</button><span id="panel-progress-label">01 — 12</span><button class="panel-arrow" id="next-island" aria-label="下一座島">→</button><a href="https://sites.google.com/view/yihwa-coding/index" target="_blank" rel="noopener noreferrer" class="more-link">正式課程資訊 ↗</a></div>
+      </aside>
+
+      <button class="open-panel is-hidden" id="open-panel" type="button">開啟島嶼介紹 <span>↖</span></button>
+      <div class="bottom-gallery"><div class="gallery-intro"><span class="gallery-kicker">CHOOSE AN ISLAND</span><span class="gallery-heading">探索學習地圖</span></div><div id="island-strip" class="island-strip" aria-label="12 座課程島嶼"></div><button class="strip-next" id="strip-next" title="向右捲動" aria-label="向右捲動">→</button></div>
+    </main>
+
+    <div class="modal-backdrop is-hidden" id="passport-modal" role="dialog" aria-modal="true" aria-labelledby="passport-title">
+      <div class="modal-window passport-window"><button class="modal-close" id="passport-close" aria-label="關閉">×</button><div class="modal-eyebrow">MY ADVENTURE PASSPORT</div><h2 id="passport-title">我的程式冒險護照</h2><p class="modal-lead">答對每座島的任務，就能收集一枚專屬徽章。學習進度只保存在目前使用的瀏覽器。</p><div class="passport-progress"><div class="passport-progress-copy"><span>已獲得徽章</span><strong id="passport-number">0 / 12</strong></div><div class="progress-track"><span id="passport-bar"></span></div></div><div class="badge-grid" id="badge-grid"></div><button class="button-primary modal-bottom-button" id="passport-explore">繼續探索 <span>→</span></button><button class="reset-progress" id="reset-progress">清除本機任務紀錄</button></div>
+    </div>
+    <div class="modal-backdrop is-hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-title"><div class="modal-window contact-window"><button class="modal-close" id="contact-close" aria-label="關閉">×</button><div class="modal-eyebrow">CONTACT YIHWA CODING</div><h2 id="contact-title">認識翊華兒童程式</h2><p class="modal-lead">想了解課程安排、授課方式或孩子適合的學習方向，可透過以下聯絡資訊洽詢。</p><div class="contact-list"><div><span>教學團隊</span><strong>鍾政信（傑克老師）</strong></div><div><span>聯絡電話</span><a href="tel:0228579222">02-2857-9222</a></div><div><span>電子信箱</span><a href="mailto:jack303.tw@yahoo.com.tw">jack303.tw@yahoo.com.tw</a></div><div><span>地址</span><strong>新北市三重區五華街 200 號</strong></div></div><a class="button-primary modal-contact-button" href="https://sites.google.com/view/yihwa-coding/index" target="_blank" rel="noopener noreferrer">前往官方網站 <span>↗</span></a></div></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
