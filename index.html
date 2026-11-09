@@ -6,7 +6,67 @@
   <meta name="theme-color" content="#e9f5f0">
   <meta name="description" content="翊華兒童程式創意冒險群島：探索 Minecraft、MakeCode、Roblox、AI 與 STEAM，完成互動實作挑戰。">
   <title>翊華兒童程式｜創意冒險群島</title>
-  <link rel="stylesheet" href="./style.css">
+  <style>
+:root{--ink:#193e43;--ink2:#365c60;--muted:#718d8a;--cream:#f7f5ee;--accent:#e38366;--mint:#e7f4ef;--line:#d7e4dd;--shadow:0 25px 80px rgba(24,76,69,.12);font-family:Inter,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:#e8f4ef}
+*{box-sizing:border-box}html,body{padding:0;margin:0;min-height:100%;overflow-x:hidden}button,a{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #e6825f;outline-offset:3px}button:disabled{cursor:not-allowed}a{color:inherit;text-decoration:none}.is-hidden{display:none!important}
+.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,3.2vw,56px);background:#fcfcf7;position:relative;z-index:20;border-bottom:1px solid #e1e9e2;gap:18px}.brand{display:flex;gap:13px;align-items:center;min-width:244px}.brand-mark{width:43px;height:43px;border-radius:14px;background:#27575b;display:grid;place-items:center;position:relative;transform:rotate(-6deg);flex:none;overflow:hidden}.brand-mark i{display:block;position:absolute;width:15px;height:15px;border:3px solid #f9e0a7;transform:rotate(45deg);border-radius:3px}.brand-mark i:nth-child(1){top:9px;left:8px}.brand-mark i:nth-child(2){top:19px;left:17px;border-color:#e38670}.brand-mark i:nth-child(3){top:8px;left:25px;border-color:#b5e2d2;width:11px;height:11px}.brand-name{display:flex;flex-direction:column;line-height:1.25}.brand-name strong{font-size:18px;letter-spacing:.075em;font-weight:850}.brand-name small{font-size:9px;color:#7e938e;letter-spacing:.23em;font-weight:800;margin-top:5px}.topnav{display:flex;align-items:center;gap:30px;height:100%}.nav-link{height:100%;display:inline-flex;align-items:center;gap:7px;background:none;border:0;padding:0 2px;color:#607b78;font-size:13px;font-weight:750;position:relative;white-space:nowrap}.nav-link.active{color:#234e50}.nav-link.active:after{content:"";position:absolute;height:3px;border-radius:2px;background:#e78b66;bottom:-1px;left:0;right:0}.nav-link span{font-size:11px;color:#bf8570}.header-cta{background:#254e52;border:none;color:#fff;border-radius:100px;padding:13px 21px;font-size:13px;letter-spacing:.03em;white-space:nowrap;font-weight:800;transition:transform .2s,background .2s}.header-cta:hover{transform:translateY(-2px);background:#36696b}.header-cta span{margin-left:12px;color:#f5c99f}
+.experience{position:relative;height:calc(100svh - 78px);min-height:780px;max-height:1050px;overflow:hidden;background:radial-gradient(ellipse at 53% 40%,#f5fff6 0%,#eaf7f0 42%,#d7eee7 72%,#cce7dd 100%)}.sky-background{position:absolute;inset:0;pointer-events:none;overflow:hidden}.sky-background:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#ffffffb4 1px,transparent 1px);background-size:37px 37px;opacity:.35}.sky-background:after{content:"";position:absolute;left:14%;right:12%;bottom:125px;height:170px;background:radial-gradient(ellipse,#f5fffa9c 0,transparent 70%);pointer-events:none}.halo{position:absolute;border:1px solid #c4e6d9;border-radius:50%;opacity:.65}.halo-1{width:780px;height:780px;left:31%;top:-170px;transform:rotateX(69deg)}.halo-2{width:1140px;height:1140px;left:16%;top:-380px;transform:rotateX(65deg)}.sky-dot{position:absolute;width:10px;height:10px;background:#fff8df;border-radius:50%;box-shadow:0 0 20px #fff}.dot-1{left:46%;top:25%}.dot-2{left:80%;top:55%}#scene{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;z-index:1}#scene.dragging{cursor:grabbing}.island-labels{position:absolute;inset:0;pointer-events:none;z-index:4;overflow:hidden}.island-marker{position:absolute;transform:translate(-50%,-50%);border:1px solid #edf2e8cc;background:#fffffff0;border-radius:13px;box-shadow:0 7px 22px #315c591d;padding:6px 10px;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:background .2s,opacity .2s,border .2s;pointer-events:auto;color:#2f5556;min-height:31px;font-size:11px;font-weight:800}.island-marker:hover{border-color:#b8d8cc;background:white}.island-marker.selected{background:#275458;color:#fff;border-color:#275458;z-index:2}.island-marker.done:before{content:"✓";background:#72ba91;color:#fff;width:15px;height:15px;border-radius:50%;display:grid;place-items:center;font-size:9px}.marker-index{color:#dd987d;font-size:10px}.island-marker.selected .marker-index{color:#f9c7a8}
+.intro-card{position:absolute;z-index:6;top:clamp(32px,6%,68px);left:clamp(20px,3.4vw,60px);width:clamp(272px,24vw,336px);pointer-events:none}.intro-card button{pointer-events:auto}.section-kicker{font-size:10px;letter-spacing:.12em;font-weight:900;color:#548783;display:flex;align-items:center;gap:6px;white-space:nowrap}.kicker-line{width:17px;height:2px;background:#e18a6c}.kicker-dot{color:#e58b6b;font-size:6px}.intro-card h1{font-size:clamp(38px,3.4vw,54px);font-weight:950;letter-spacing:-.055em;line-height:1.23;margin:22px 0 15px}.highlight{color:#d9785e;position:relative}.underline-stroke{position:absolute;left:0;right:0;bottom:-11px;height:9px;border-top:4px solid #eeb69c;border-radius:50%;transform:rotate(-3deg)}.lead{font-size:14px;line-height:2;color:#657f7a;margin:22px 0 24px;max-width:315px;font-weight:500}.intro-actions{display:flex;align-items:center;gap:13px}.button-primary{border:0;border-radius:13px;background:#e28364;padding:14px 17px;color:#fff;font-weight:900;font-size:12.5px;display:inline-flex;gap:16px;align-items:center;justify-content:space-between;box-shadow:0 10px 18px #d583652d;transition:.2s}.button-primary:hover{background:#d27658;transform:translateY(-2px)}.button-arrow{border-radius:50%;background:#ffffff37;width:22px;height:22px;display:grid;place-items:center}.button-text{border:none;background:transparent;color:#315e5d;font-weight:850;font-size:12px;padding:10px 4px}.button-text:hover{text-decoration:underline}.intro-rule{height:1px;background:#cee0d6;max-width:305px;margin:30px 0 21px}.intro-stats{display:flex;max-width:295px;justify-content:space-between;gap:8px}.intro-stats div{display:flex;flex-direction:column;gap:5px}.intro-stats strong{font-size:27px;line-height:1;font-weight:950;letter-spacing:-.03em}.intro-stats strong span{font-size:13px;font-weight:800;color:#87a39a;margin-left:3px}.intro-stats small{font-size:10px;font-weight:700;color:#7c9891}.hint-line{display:flex;align-items:center;gap:10px;margin-top:37px;color:#89a6a0;font-size:10px;font-weight:700;letter-spacing:.05em}.mouse-outline{display:inline-block;width:15px;height:20px;border-radius:9px;border:1.5px solid #8baaa4;position:relative}.mouse-outline:before{content:"";position:absolute;width:2px;height:5px;background:#8baaa4;left:5.5px;top:4px;border-radius:2px}
+.scene-toolbar{position:absolute;z-index:6;left:clamp(20px,3.4vw,60px);bottom:140px;background:#ffffffdb;border:1px solid #e4eee8;border-radius:16px;display:flex;align-items:center;padding:6px;gap:2px;box-shadow:0 8px 28px #33675f12}.scene-toolbar button{height:31px;width:33px;display:grid;place-items:center;border:0;background:transparent;color:#567b78;font-weight:650;font-size:22px;border-radius:10px}.scene-toolbar button:hover{background:#e9f6ef}.toolbar-line{height:20px;width:1px;background:#d7e5df;margin:0 3px}.world-caption{position:absolute;z-index:5;left:clamp(20px,3.4vw,60px);bottom:109px;font-size:10px;font-weight:900;letter-spacing:.16em;color:#649b93}.world-caption-icon{font-size:16px;vertical-align:middle;color:#d98b70;margin-right:5px}.world-caption-muted{color:#9bb9b1;letter-spacing:0;font-weight:600}
+.course-panel{position:absolute;z-index:9;right:clamp(22px,3vw,52px);top:clamp(21px,3.1vh,34px);bottom:126px;width:clamp(310px,26vw,373px);background:rgba(255,255,252,.98);border-radius:23px;box-shadow:var(--shadow);border:1px solid #ffffff;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s,opacity .3s}.course-panel.closed{transform:translateX(calc(100% + 85px));opacity:0;pointer-events:none}.panel-top{padding:14px 19px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eef0e9}.panel-location{display:flex;align-items:center;gap:9px;text-transform:uppercase;color:#62807a;font-size:10px;font-weight:900;letter-spacing:.065em}.location-dot{width:7px;height:7px;border-radius:50%;background:#74bda0;box-shadow:0 0 0 4px #e4f5e9}.panel-step{color:#c5ccc5;margin-left:5px}.panel-close{background:transparent;border:0;font-size:25px;line-height:1;color:#a4b1aa;padding:0 4px}.panel-illustration{height:130px;min-height:110px;overflow:hidden;position:relative;background:linear-gradient(120deg,#e2f1e4,#f4ece4);display:grid;place-items:center}.panel-illustration:before,.panel-illustration:after{content:"";position:absolute;border:1px solid #ffffffa8;border-radius:50%;width:190px;height:190px;transform:rotate(-18deg) scaleY(.4)}.panel-illustration:after{width:280px;height:280px;opacity:.45}.panel-art-glow{width:150px;height:85px;border-radius:50%;background:#ffffff9c;filter:blur(29px);position:absolute}.panel-icon{font-size:66px;font-weight:900;color:#47756f;position:relative;z-index:2;transform:rotate(-10deg);text-shadow:0 7px 0 #ffffff9f;transition:transform .4s}.panel-illustration:hover .panel-icon{transform:rotate(4deg) translateY(-5px)}.panel-art-number{position:absolute;bottom:12px;right:16px;letter-spacing:.15em;font-size:10px;font-weight:900;color:#89a59c}.panel-main{padding:21px 25px 17px;overflow:auto;min-height:0;flex:1;scrollbar-color:#bddbd1 transparent;scrollbar-width:thin}.course-category{font-size:10px;font-weight:900;color:#dd8c70;letter-spacing:.15em}.panel-main h2{font-size:25px;letter-spacing:-.03em;margin:8px 0 9px;font-weight:950}.panel-main>p{color:#7c908c;font-size:12px;line-height:1.75;margin:0 0 12px}.course-tags{display:flex;flex-wrap:wrap;gap:6px}.course-tags span{border-radius:7px;padding:5px 7px;background:#eef6f1;color:#658781;font-size:10px;font-weight:800}.tabbar{display:flex;align-items:center;gap:24px;border-bottom:1px solid #e7ebe5;margin:20px 0 18px}.tab{border:0;border-bottom:2px solid transparent;background:none;color:#94a6a0;font-weight:850;font-size:12px;padding:0 0 11px;white-space:nowrap}.tab.active{border-color:#e18569;color:#295754}.tab-star{color:#e6a36e}.content-heading{font-weight:900;font-size:12px;color:#355b5a;display:flex;gap:9px;align-items:center;margin-bottom:11px}.heading-icon{color:#e08467;font-size:17px}.learn-list{padding:0;margin:0 0 16px;list-style:none;display:grid;gap:9px}.learn-list li{color:#6b8881;font-size:12px;line-height:1.55;display:flex;align-items:start;gap:8px}.learn-list li:before{content:"✓";border-radius:50%;color:#579c83;background:#e6f3ec;font-size:10px;width:16px;height:16px;display:grid;place-items:center;flex:none;margin-top:1px}.outcome-box{background:#f2f6ee;border-radius:12px;padding:13px 14px;font-size:12px;line-height:1.7;color:#506c64;margin-bottom:16px}.outcome-label{font-size:9px;font-weight:950;color:#b38264;letter-spacing:.1em;display:block;margin-bottom:4px}.button-dark{background:#315d5e;color:white;border:0;border-radius:11px;width:100%;padding:13px 15px;font-size:12px;font-weight:850;display:flex;align-items:center;justify-content:space-between}.button-dark:hover{background:#214b4e}.panel-footer{border-top:1px solid #e9eee8;padding:12px 19px;display:flex;align-items:center;gap:10px;margin-top:auto}.panel-arrow{border:1px solid #dce9e2;background:#fff;color:#3a645f;border-radius:10px;width:31px;height:31px;display:grid;place-items:center}.panel-arrow:hover{background:#edf7f1}.panel-footer>span{font-size:10px;letter-spacing:.12em;color:#9cb1a9;font-weight:800}.more-link{font-size:10px;font-weight:850;color:#567c74;margin-left:auto}.more-link:hover{text-decoration:underline}
+.challenge-header{display:flex;align-items:center;gap:10px}.challenge-mark{height:35px;width:35px;display:grid;place-items:center;border-radius:12px;background:#e8f3ec;color:#5d9984;font-weight:1000;font-size:20px}.challenge-overline{font-size:10px;font-weight:850;letter-spacing:.09em;color:#9aaa9f}.challenge-heading{font-size:14px;font-weight:950;margin-top:2px}.challenge-question{font-size:13px;font-weight:800;color:#355f5e;line-height:1.8;margin:18px 0 13px}.answer-list{display:grid;gap:8px}.answer-option{border:1px solid #dcebe2;background:#fff;border-radius:11px;padding:11px 12px;text-align:left;display:flex;align-items:center;gap:10px;color:#46675f;font-size:12px;font-weight:750;line-height:1.5}.answer-option:hover:not(:disabled){border-color:#7db9a4;background:#f4f9f5}.answer-index{background:#eff5ed;color:#789a8b;border-radius:8px;width:22px;height:22px;display:grid;place-items:center;font-size:10px;flex:none}.answer-option.correct{border-color:#75b39a;background:#eaf8ec;color:#247554}.answer-option.incorrect{border-color:#e3a39a;background:#fdf0ed;color:#bb645e}.answer-option:disabled{opacity:.9}.answer-feedback{font-size:11px;font-weight:750;line-height:1.7;min-height:24px;margin:11px 0 0}.answer-feedback.success{color:#298667}.answer-feedback.error{color:#c57762}.challenge-footnote{font-size:10px;color:#a6b2a8;margin:12px 0}.open-panel{position:absolute;top:24px;right:24px;z-index:10;border:0;background:#305c5d;color:#fff;border-radius:13px;padding:13px 17px;font-size:12px;font-weight:900;box-shadow:var(--shadow)}.open-panel span{padding-left:10px}
+.bottom-gallery{height:104px;position:absolute;bottom:0;left:0;right:0;z-index:8;border-top:1px solid #e2eae4;background:#fffffff5;display:flex;align-items:center;gap:16px;padding:15px clamp(18px,3.1vw,55px);box-shadow:0 -9px 35px #638e8214}.gallery-intro{min-width:135px;display:flex;flex-direction:column;gap:5px}.gallery-kicker{font-size:9px;letter-spacing:.15em;color:#d88c6d;font-weight:900}.gallery-heading{font-size:14px;font-weight:950}.island-strip{display:flex;overflow-x:auto;gap:9px;flex:1;padding:5px;scrollbar-width:none;scroll-behavior:smooth}.island-strip::-webkit-scrollbar{display:none}.strip-item{border:1px solid #e4ebe3;border-radius:13px;background:#f6f8f3;display:flex;align-items:center;gap:9px;padding:9px 11px;min-width:130px;flex:none;text-align:left;color:#43645e;transition:.2s}.strip-item:hover{border-color:#9dcab7;transform:translateY(-2px)}.strip-item.active{background:#305f60;border-color:#305f60;color:#fff;box-shadow:0 6px 14px #305f6033}.strip-number{font-size:10px;color:#bf9c86;font-weight:950}.strip-title{font-size:11px;font-weight:900;white-space:nowrap}.strip-complete{font-size:11px;color:#80bfa2}.strip-next{flex:none;border:1px solid #dae8e0;background:white;color:#396a63;border-radius:50%;width:35px;height:35px;font-size:18px}
+.modal-backdrop{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;background:rgba(19,53,51,.53);padding:22px;backdrop-filter:blur(7px)}.modal-window{width:min(600px,100%);max-height:min(88vh,760px);background:#fbfcf8;border-radius:25px;padding:31px;position:relative;overflow-y:auto;box-shadow:0 40px 110px #142c2d4d}.modal-close{position:absolute;right:20px;top:15px;border:0;background:none;color:#69817b;font-size:29px}.modal-eyebrow{font-size:10px;color:#d7866c;font-weight:950;letter-spacing:.17em;margin-bottom:8px}.modal-window h2{font-size:27px;margin:0 0 12px;letter-spacing:-.03em}.modal-lead{font-size:12px;color:#718983;line-height:1.8;margin:0 0 22px}.passport-progress{background:#ecf4ed;border-radius:15px;padding:16px;margin-bottom:18px}.passport-progress-copy{display:flex;justify-content:space-between;font-size:12px;font-weight:800;margin-bottom:10px}.passport-progress-copy strong{color:#377963}.progress-track{height:8px;background:#d6e6da;border-radius:20px;overflow:hidden}.progress-track span{height:100%;width:0;display:block;background:linear-gradient(90deg,#62b093,#eaa174);border-radius:20px;transition:width .3s}.badge-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.badge-item{border:1px solid #e2ece3;background:#f5f7f1;border-radius:13px;min-height:88px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;text-align:center;color:#91a59b;font-size:10px;font-weight:800;line-height:1.3;padding:10px}.badge-item .badge-icon{font-size:25px;filter:grayscale(1);opacity:.42}.badge-item.complete{color:#3b6b59;border-color:#a8d5bd;background:#e9f7e9}.badge-item.complete .badge-icon{opacity:1;filter:none}.modal-bottom-button{margin-top:21px;width:100%;justify-content:center}.reset-progress{display:block;margin:13px auto 0;border:0;background:none;font-size:10px;color:#a9b5ad;text-decoration:underline}.contact-list{border:1px solid #e4ece5;border-radius:15px;overflow:hidden;margin-bottom:22px}.contact-list>div{display:grid;grid-template-columns:90px 1fr;padding:15px 16px;font-size:12px;gap:12px;border-bottom:1px solid #edf0eb}.contact-list>div:last-child{border-bottom:0}.contact-list span{color:#8b9d95}.contact-list strong,.contact-list a{color:#285852;font-weight:850;overflow-wrap:anywhere}.modal-contact-button{width:100%;justify-content:center}.toast{position:fixed;left:50%;bottom:128px;transform:translate(-50%,20px);z-index:70;pointer-events:none;background:#294f50;color:#fff;border-radius:40px;padding:12px 19px;font-size:12px;font-weight:850;box-shadow:0 12px 35px #254e4e35;opacity:0;transition:.25s;max-width:min(90vw,500px);text-align:center}.toast.visible{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1200px){.intro-card{width:260px}.intro-card h1{font-size:40px}.lead{font-size:12px}.course-panel{right:20px;width:319px}.world-caption{display:none}.experience{min-height:760px}.scene-toolbar{bottom:125px}.bottom-gallery{height:95px}.course-panel{bottom:116px}}
+@media(max-width:900px){.topbar{height:68px;padding:0 18px}.brand{min-width:200px}.brand-name strong{font-size:16px}.topnav{gap:15px}.nav-link{font-size:11px}.header-cta{padding:11px}.experience{height:calc(100svh - 68px);min-height:720px}.intro-card{top:23px;left:21px;width:240px}.intro-card h1{font-size:35px;margin:12px 0}.lead{line-height:1.7;margin:14px 0;font-size:11px}.intro-rule{margin:19px 0 15px}.intro-stats strong{font-size:22px}.hint-line{margin-top:15px}.course-panel{top:18px;right:14px;width:286px;bottom:112px}.panel-illustration{height:100px;min-height:100px}.panel-main{padding:16px 18px}.panel-main h2{font-size:21px}.panel-main>p,.learn-list li{font-size:11px}.tabbar{margin:13px 0}.panel-top{padding:10px}.gallery-intro{min-width:125px}}
+@media(max-width:700px){.topnav{display:none}.topbar{height:64px}.brand{min-width:0}.brand-mark{width:36px;height:36px}.brand-name strong{font-size:15px}.brand-name small{font-size:8px}.header-cta{font-size:11px;padding:11px 13px}.experience{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(175deg,#e8f6ee,#d7efe6 60%,#eaf2ed)}.sky-background{height:510px}.experience #scene{position:absolute;top:0;height:525px}.island-labels{height:525px;bottom:auto}.intro-card{order:0;position:relative;top:auto;left:auto;margin:22px 20px 0;width:calc(100% - 40px);max-width:450px;pointer-events:auto;z-index:6}.section-kicker{font-size:9px}.intro-card h1{font-size:34px;line-height:1.15;margin:12px 0 6px}.intro-card h1 br{display:none}.intro-card h1 .highlight{margin-left:7px}.lead{max-width:350px;line-height:1.6;font-size:11px;margin:10px 0 12px}.intro-actions{gap:10px}.button-primary{padding:10px 14px}.intro-rule,.intro-stats,.hint-line{display:none}.scene-toolbar{position:absolute;top:385px;bottom:auto;left:20px;margin:0;z-index:6}.world-caption{display:none}.course-panel{position:relative;order:2;top:auto;right:auto;bottom:auto;width:auto;margin:360px 16px 35px;height:auto;max-height:none;min-height:550px;overflow:visible;border-radius:20px;transition:none}.course-panel.closed{display:none}.panel-illustration{height:105px;min-height:105px}.panel-main{overflow:visible;padding:19px}.panel-main h2{font-size:23px}.panel-main>p,.learn-list li{font-size:12px}.panel-footer{padding:12px}.open-panel{position:relative;order:2;top:auto;right:auto;margin:360px 16px 35px}.bottom-gallery{position:absolute;top:453px;bottom:auto;height:94px;padding:12px 15px;gap:9px}.gallery-intro{display:none}.island-marker{font-size:9px;padding:4px 7px;min-height:27px;border-radius:9px}.marker-index{font-size:9px}.strip-item{min-width:117px;padding:9px}.strip-next{display:none}.modal-backdrop{padding:12px}.modal-window{padding:23px}.badge-grid{grid-template-columns:repeat(3,1fr)}.toast{bottom:25px}}
+@media(max-width:375px){.intro-card h1{font-size:31px}.intro-card{margin-top:16px}.scene-toolbar{top:382px}.course-panel{margin-top:360px}.brand-name small{letter-spacing:.1em}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* v2: collapsible introduction, in-world builder, and animated residents */
+.intro-card{transition:width .28s,background .28s,box-shadow .28s,padding .28s;pointer-events:auto;}
+.intro-toggle{position:absolute;top:-7px;right:0;display:flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid #cce1d9;border-radius:999px;background:rgba(255,255,255,.88);font-size:10px;font-weight:900;color:#356b62;box-shadow:0 5px 17px #32675b1b;white-space:nowrap;z-index:3;}
+.intro-toggle:hover{background:#fff;border-color:#8dc8b3}
+.intro-toggle>span:first-child{font-size:17px;line-height:11px}
+.intro-card.is-collapsed{width:130px!important;padding:0;min-height:31px}
+.intro-card.is-collapsed .intro-content{display:none}
+.intro-card.is-collapsed .intro-toggle{right:auto;left:0;top:0;background:#fff;color:#285b52}
+.builder-dock{position:absolute;z-index:11;left:clamp(20px,3.4vw,60px);bottom:191px;width:322px;max-width:calc(100% - 36px);pointer-events:none}
+.builder-headerline{display:flex;justify-content:flex-start;pointer-events:auto}
+.builder-toggle{display:inline-flex;align-items:center;gap:9px;border:1px solid #c7ded1;color:#265652;background:rgba(255,255,252,.96);font-weight:900;font-size:12px;border-radius:14px;padding:11px 14px;box-shadow:0 12px 28px #204c4324;transition:.2s}
+.builder-toggle:hover,.builder-dock.is-open .builder-toggle{background:#285d56;color:#fff;border-color:#285d56}
+.builder-toggle-icon{font-size:19px;color:#d99f71}
+.builder-count{font-size:10px;font-weight:850;border-radius:20px;padding:4px 7px;background:#e4f1e7;color:#4f8875}
+.builder-dock.is-open .builder-count{background:#4a7568;color:#e7fff3}
+#builder-toggle-arrow{font-size:14px;margin-left:1px}
+.builder-panel{pointer-events:auto;background:rgba(255,255,252,.985);border:1px solid #fff;box-shadow:0 25px 70px #244b4a29;border-radius:21px;padding:17px 17px 13px;margin-bottom:11px;max-height:min(600px,calc(100svh - 280px));overflow-y:auto;overscroll-behavior:contain}
+.builder-top{display:flex;align-items:start;justify-content:space-between;gap:10px}
+.builder-eyebrow{letter-spacing:.12em;color:#c78d6f;font-size:9px;font-weight:900}
+.builder-top h2{font-size:19px;letter-spacing:-.04em;margin:4px 0 7px;font-weight:950}
+.builder-x{border:none;background:#ecf5ee;color:#5e8177;width:27px;height:27px;border-radius:50%;font-size:21px;line-height:1}
+.builder-description{font-size:11px;line-height:1.65;margin:3px 0 13px;color:#6d8980}
+.builder-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.prop-tile{min-height:71px;border-radius:12px;border:1px solid #dfece3;background:#f5f8f3;padding:7px 3px;display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center;color:#467068;transition:.18s}
+.prop-tile:hover{background:#eaf6ed;transform:translateY(-2px);border-color:#aacdbd}
+.prop-tile.active{background:#285c57;color:#fff;border-color:#285c57;box-shadow:0 5px 15px #285c5730}
+.prop-tile span{font-size:22px;filter:saturate(.85)}
+.prop-tile strong{font-size:10px;font-weight:900;white-space:nowrap}
+.prop-bridge{background:#fff5ed;border-color:#f1ddc6}
+.builder-status{background:#eaf5ee;color:#3e7962;border-radius:10px;padding:10px 11px;font-size:11px;font-weight:800;line-height:1.55;margin-top:12px;min-height:37px}
+.builder-status.pending{background:#fcf0dd;color:#ad7443}
+.builder-actions{display:grid;grid-template-columns:1fr 1.45fr .75fr;gap:7px;margin-top:10px}
+.builder-actions button{border-radius:9px;border:1px solid #d6e4d9;background:#fff;padding:9px 4px;font-size:10px;color:#477066;font-weight:900}
+.builder-actions button:hover{background:#ecf7ef}
+.builder-actions button:disabled{opacity:.4;cursor:not-allowed}
+.builder-actions #builder-sample{background:#fef0dc;border-color:#f3d7b3;color:#a16e3f}
+.builder-footnote{font-size:9px;color:#9aaba1;text-align:center;margin-top:10px}
+body.is-placing #scene{cursor:crosshair}
+body.is-placing #scene.dragging{cursor:grabbing}
+body.is-placing .island-marker{border-color:#edc48d}
+@media(max-width:900px){.builder-dock{left:17px;bottom:158px;width:290px}.builder-panel{padding:13px;max-height:400px}.builder-grid{gap:5px}.builder-toggle{padding:9px 11px}.intro-toggle{top:-3px}}
+@media(max-width:700px){.intro-card{min-height:0}.intro-toggle{right:0;top:0}.intro-card.is-collapsed{margin-bottom:0;margin-top:16px;height:28px;min-height:28px}.builder-dock{position:fixed;left:12px;right:12px;bottom:12px;width:auto;max-width:none;z-index:30;display:flex;flex-direction:column-reverse;align-items:stretch;gap:7px}.builder-headerline{justify-content:flex-end}.builder-toggle{background:#fff;box-shadow:0 7px 28px #20504933}.builder-panel{margin-bottom:0;max-height:min(65svh,520px);border-radius:18px;padding:14px}.builder-grid{grid-template-columns:repeat(4,1fr)}.builder-dock.is-open .builder-headerline{justify-content:flex-end}.scene-toolbar{top:393px}.intro-card.is-collapsed~.scene-toolbar{top:392px}.course-panel{margin-top:360px}.open-panel{margin-top:360px}.bottom-gallery{top:453px}}
+
+</style>
 </head>
 <body>
   <div id="app">
@@ -28,7 +88,9 @@
       <canvas id="scene" aria-label="可旋轉及點選的翊華兒童程式浮空島立體地圖"></canvas>
       <div id="island-labels" class="island-labels" aria-label="島嶼地圖標籤"></div>
 
-      <section class="intro-card" aria-labelledby="hero-title">
+      <section class="intro-card" id="intro-card" aria-labelledby="hero-title">
+        <button type="button" class="intro-toggle" id="intro-toggle" aria-expanded="true" aria-controls="intro-content" title="收合左側介紹"><span id="intro-toggle-icon">‹</span><span id="intro-toggle-text">收合介紹</span></button>
+        <div id="intro-content" class="intro-content">
         <div class="section-kicker"><span class="kicker-line"></span> 3D LEARNING WORLD <span class="kicker-dot">●</span> 創意探索計畫</div>
         <h1 id="hero-title">讓想像力<br>成為<span class="highlight">創造力<span class="underline-stroke"></span></span></h1>
         <p class="lead">從 Minecraft 到 Roblox，從 AI 科學到創客實作。踏上 12 座學習島，探索程式的無限可能。</p>
@@ -39,7 +101,33 @@
         <div class="intro-rule"></div>
         <div class="intro-stats"><div><strong>12<span>座</span></strong><small>主題學習島</small></div><div><strong>12<span>題</span></strong><small>互動小挑戰</small></div><div><strong id="hero-progress">0<span>/12</span></strong><small>已完成任務</small></div></div>
         <div class="hint-line"><span class="mouse-outline" aria-hidden="true"></span><span>拖曳旋轉視角 · 滾輪縮放 · 點選島嶼</span></div>
+        </div>
       </section>
+
+      <aside id="builder-dock" class="builder-dock" aria-label="島嶼創意工坊">
+        <div class="builder-headerline"><button type="button" id="builder-toggle" class="builder-toggle" aria-expanded="false" aria-controls="builder-panel"><span class="builder-toggle-icon">✣</span> 島嶼創意工坊 <span id="builder-count" class="builder-count">0 件作品</span><span id="builder-toggle-arrow">⌃</span></button></div>
+        <div id="builder-panel" class="builder-panel is-hidden">
+          <div class="builder-top"><div><span class="builder-eyebrow">YOUR WORLD, YOUR RULES</span><h2>打造你的天空群島</h2></div><button id="builder-exit" type="button" class="builder-x" title="關閉工坊" aria-label="關閉工坊">×</button></div>
+          <p class="builder-description">點選物件，再點島嶼放置；電腦也可以直接拖曳。「橋梁」需要依序選兩座島。</p>
+          <div class="builder-grid" id="builder-grid" role="group" aria-label="可放置的場景物件">
+            <button type="button" data-prop="house" class="prop-tile"><span>🏠</span><strong>小房子</strong></button>
+            <button type="button" data-prop="tree" class="prop-tile"><span>🌳</span><strong>小樹</strong></button>
+            <button type="button" data-prop="flower" class="prop-tile"><span>🌼</span><strong>花圃</strong></button>
+            <button type="button" data-prop="lamp" class="prop-tile"><span>💡</span><strong>路燈</strong></button>
+            <button type="button" data-prop="bench" class="prop-tile"><span>🪑</span><strong>長椅</strong></button>
+            <button type="button" data-prop="balloon" class="prop-tile"><span>🎈</span><strong>氣球</strong></button>
+            <button type="button" data-prop="sign" class="prop-tile"><span>🚩</span><strong>旗幟</strong></button>
+            <button type="button" data-prop="bridge" class="prop-tile prop-bridge"><span>🌉</span><strong>島嶼橋梁</strong></button>
+          </div>
+          <div class="builder-status" id="builder-status" aria-live="polite">先選一個物件，就能開始建造。</div>
+          <div class="builder-actions">
+            <button id="builder-undo" type="button" title="撤銷上一步">↶ 撤銷</button>
+            <button id="builder-sample" type="button" title="加入範例橋梁與場景">✦ 範例佈置</button>
+            <button id="builder-clear" type="button" title="清空所有自行放置物件">清空</button>
+          </div>
+          <div class="builder-footnote">建造內容會儲存在此瀏覽器 · 可隨時重新調整</div>
+        </div>
+      </aside>
 
       <div class="scene-toolbar" role="group" aria-label="地圖操作工具">
         <button type="button" title="放大" aria-label="放大" id="zoom-in">＋</button>
@@ -47,7 +135,7 @@
         <span class="toolbar-line"></span>
         <button type="button" title="返回全景" aria-label="返回全景" id="overview">⌂</button>
       </div>
-      <div class="world-caption"><span class="world-caption-icon">◈</span> YIHWA SKY ISLANDS <span class="world-caption-muted">/ 互動體驗版 v1.0</span></div>
+      <div class="world-caption"><span class="world-caption-icon">◈</span> YIHWA SKY ISLANDS <span class="world-caption-muted">/ 互動建造版 v2.0</span></div>
 
       <aside class="course-panel" id="course-panel" aria-live="polite">
         <div class="panel-top"><div class="panel-location"><span class="location-dot"></span> 目前探索島嶼 <span class="panel-step" id="panel-step">01 / 12</span></div><button type="button" id="panel-close" class="panel-close" title="收合介紹" aria-label="收合介紹">×</button></div>
@@ -85,6 +173,363 @@
     <div class="modal-backdrop is-hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-title"><div class="modal-window contact-window"><button class="modal-close" id="contact-close" aria-label="關閉">×</button><div class="modal-eyebrow">CONTACT YIHWA CODING</div><h2 id="contact-title">認識翊華兒童程式</h2><p class="modal-lead">想了解課程安排、授課方式或孩子適合的學習方向，可透過以下聯絡資訊洽詢。</p><div class="contact-list"><div><span>教學團隊</span><strong>鍾政信（傑克老師）</strong></div><div><span>聯絡電話</span><a href="tel:0228579222">02-2857-9222</a></div><div><span>電子信箱</span><a href="mailto:jack303.tw@yahoo.com.tw">jack303.tw@yahoo.com.tw</a></div><div><span>地址</span><strong>新北市三重區五華街 200 號</strong></div></div><a class="button-primary modal-contact-button" href="https://sites.google.com/view/yihwa-coding/index" target="_blank" rel="noopener noreferrer">前往官方網站 <span>↗</span></a></div></div>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </div>
-  <script src="./app.js" defer></script>
+  <script>
+/* 翊華兒童程式・創意冒險群島
+ * 獨立創作的 Canvas 3D 透視場景，無需第三方 JavaScript 套件。
+ * 課程島嶼及問題為展示性內容，正式開課資訊請以翊華官網為準。
+ */
+(() => {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+  const STORAGE_KEY = 'yihwa-coding-islands-badges-v1';
+  const courses = [
+    {id:1,name:'翊華創意主島',short:'創意主島',kind:'創意啟航',en:'START HERE',icon:'✦',color:'#65b5a6',grass:'#83c9a4',category:'intro',pos:[0,0],desc:'從好奇出發，透過觀察、動手做與作品分享，認識程式學習的樂趣。',tags:['運算思維','動手創作','探索學習'],learn:['把生活中的問題拆解成小步驟','觀察、嘗試、修正，再完成自己的作品','認識不同程式與科技創作方向'],outcome:'設計一張自己的創作者冒險名片。',q:'製作程式作品遇到錯誤，最適合怎麼做？',choices:['立刻放棄作品','觀察問題、測試並修正','只看別人的答案'],correct:1,reason:'勇於測試、找出原因並修正，是程式學習的重要能力。'},
+    {id:2,name:'Minecraft 建築島',short:'Minecraft',kind:'方塊世界',en:'BUILD & CREATE',icon:'▦',color:'#69a979',grass:'#8ac384',category:'code',pos:[7.7,-1.4],desc:'用方塊打造夢想世界，在建築中學習座標、比例、規劃與空間設計。',tags:['Minecraft Education','立體座標','建築'],learn:['了解 X、Y、Z 三個座標軸','設計建築外觀與室內空間','透過重複結構提高建造效率'],outcome:'完成一座具有入口、窗戶和光源的天空基地。',q:'在 Minecraft 中，哪個座標通常代表高度？',choices:['X','Y','Z'],correct:1,reason:'Y 座標表示垂直方向的高度。'},
+    {id:3,name:'MakeCode 魔法島',short:'MakeCode',kind:'積木程式',en:'BLOCK CODING',icon:'{ }',color:'#66a4be',grass:'#85c6bb',category:'code',pos:[4.8,-9.1],desc:'運用積木指令讓角色與建築動起來，從簡單指令建立邏輯思考能力。',tags:['積木程式','迴圈','條件判斷'],learn:['使用循序指令完成指定動作','認識重複、條件與變數','讓程式自動執行建造或互動'],outcome:'編寫一段能自動放置方塊的建造程式。',q:'若要讓同一個動作執行 10 次，適合使用什麼指令？',choices:['重複迴圈','停止程式','只播放音效'],correct:0,reason:'迴圈能把相同的動作重複執行，減少重複編寫。'},
+    {id:4,name:'Roblox 遊戲島',short:'Roblox',kind:'遊戲設計',en:'GAME DESIGN',icon:'◇',color:'#a08ac8',grass:'#9abbd0',category:'code',pos:[-2.6,-11.5],desc:'從跑酷關卡到互動任務，理解一個有趣遊戲如何由場景、規則與程式組成。',tags:['Roblox Studio','關卡設計','Luau'],learn:['建立遊戲場景與障礙物','設定玩家目標與勝利條件','加入觸發器、得分與角色互動'],outcome:'設計有起點、檢查點與終點的跑酷關卡。',q:'一個好玩的跑酷遊戲，最需要先規劃什麼？',choices:['完全沒有終點','關卡路線與遊戲規則','只加入裝飾圖片'],correct:1,reason:'清楚的路線、目標與規則，能讓玩家知道如何挑戰。'},
+    {id:5,name:'AI 科學實驗島',short:'AI 科學',kind:'跨領域實驗',en:'AI & SCIENCE',icon:'⚗',color:'#d6a474',grass:'#b9cd8c',category:'maker',pos:[-9.2,-7.4],desc:'結合科學觀察、資料與智慧工具，讓學生用實驗驗證自己的想法。',tags:['科學探究','AI 工具','資料觀察'],learn:['提出問題並設計觀察方式','整理實驗資料與比較結果','學習檢查 AI 生成內容的正確性'],outcome:'製作一份有觀察結果與結論的小型科學報告。',q:'AI 提供的科學答案，最適合怎麼處理？',choices:['不需查證直接相信','實際觀察並比對可靠資料','把不同答案全部刪掉'],correct:1,reason:'科學學習需要證據與驗證，AI 的回答也應查核。'},
+    {id:6,name:'Scratch 動畫島',short:'Scratch',kind:'程式啟蒙',en:'STORY & ANIMATION',icon:'✳',color:'#e4a079',grass:'#a8cbb3',category:'code',pos:[-10.7,3.1],desc:'讓角色在畫面上說話、移動、表演故事，用動畫理解事件與指令順序。',tags:['動畫故事','事件指令','角色設計'],learn:['使用事件啟動動畫','組合移動、造型與音效指令','設計互動故事的開始與結局'],outcome:'創作一段角色會移動、說話的互動短劇。',q:'想讓角色在按下綠旗後開始移動，該用哪種積木？',choices:['事件啟動積木','隨機刪除積木','永遠停止積木'],correct:0,reason:'事件積木能指定程式在什麼時候開始執行。'},
+    {id:7,name:'機器人挑戰島',short:'機器人',kind:'智慧控制',en:'ROBOTICS',icon:'⚙',color:'#6ca5a5',grass:'#8abfa9',category:'maker',pos:[-4.5,10.6],desc:'從感測器到馬達控制，讓機器人依據不同狀況做出動作。',tags:['感測器','自動控制','機電整合'],learn:['認識輸入、處理與輸出的關係','設定機器人的行動流程','測試並改善機器人的反應'],outcome:'規劃一台遇到障礙物會改變方向的機器人。',q:'機器人要偵測前方是否有障礙物，需要什麼？',choices:['距離感測器','鍵盤貼紙','螢幕桌布'],correct:0,reason:'距離感測器能協助機器人感知物體遠近。'},
+    {id:8,name:'無人機飛行島',short:'無人機',kind:'空中科技',en:'FLIGHT LAB',icon:'⌁',color:'#72b9b9',grass:'#8ec8b0',category:'maker',pos:[4,11.5],desc:'從旋翼與飛行控制認識科技，透過安全規劃理解導航與路徑。',tags:['飛行原理','安全操作','路線規劃'],learn:['理解旋翼如何協助飛行','規劃安全的起降區域','練習簡單的航線邏輯'],outcome:'為一台虛擬無人機規劃安全飛行路線。',q:'無人機起飛前，最重要的第一件事是什麼？',choices:['不管周遭環境直接起飛','確認環境、安全規則與設備','先飛到越高越好'],correct:1,reason:'飛行前的環境檢查和安全判斷不可省略。'},
+    {id:9,name:'3D 創客工坊島',short:'3D 創客',kind:'創客實作',en:'MAKER SPACE',icon:'⬡',color:'#e2ac69',grass:'#b2d1a6',category:'maker',pos:[11.1,7.3],desc:'把紙上的設計化成立體模型，認識 3D 設計、列印與作品改良。',tags:['3D 建模','創客設計','原型測試'],learn:['利用幾何形狀組成立體模型','思考尺寸與結構穩定性','修改模型並檢查可列印性'],outcome:'設計一個有自己名字的立體鑰匙圈。',q:'3D 列印作品尺寸不合，較合適的做法是？',choices:['調整模型尺寸後再測試','完全不檢查直接重印','刪掉全部設計'],correct:0,reason:'創客設計重視測量、測試與迭代修正。'},
+    {id:10,name:'程式解謎島',short:'程式解謎',kind:'邏輯思考',en:'LOGIC QUEST',icon:'?',color:'#95b484',grass:'#a8cc8b',category:'code',pos:[13.3,-5],desc:'透過迷宮、條件和演算法，把複雜的問題一步一步拆解。',tags:['演算法','邏輯推理','除錯'],learn:['將挑戰拆成明確的小步驟','使用條件判斷不同情境','比較兩種解法的效率'],outcome:'設計一條讓機器角色走出迷宮的指令路線。',q:'當程式結果不符合預期，應該先做什麼？',choices:['逐步檢查指令與條件','把螢幕關閉就算完成','增加更多隨機指令'],correct:0,reason:'逐步檢查是找出程式錯誤的有效方法。'},
+    {id:11,name:'學生成果星光島',short:'學生成果',kind:'創作展示',en:'STUDENT SHOWCASE',icon:'★',color:'#c694ae',grass:'#b8c8b3',category:'showcase',pos:[-15.2,-1.3],desc:'讓每一份作品都被看見，從介紹設計構想到示範實際操作，練習分享成果。',tags:['作品發表','創意表達','成果紀錄'],learn:['整理作品的設計目標','介紹製作過程和遇到的問題','以圖片、影片或現場演示分享成果'],outcome:'完成一張包含作品介紹、操作畫面和學習心得的展示卡。',q:'介紹一個自己製作的遊戲，哪項內容最能幫助別人了解？',choices:['只有遊戲名稱','遊戲目標、玩法和創作過程','不讓任何人看到作品'],correct:1,reason:'結合目的、玩法與歷程，能清楚呈現作品的價值。'},
+    {id:12,name:'未來科技島',short:'未來科技',kind:'創意延伸',en:'FUTURE LAB',icon:'✧',color:'#8795ca',grass:'#9ebfbc',category:'maker',pos:[0,17.3],desc:'將程式、藝術、AI 與科學結合，嘗試構思下一個跨領域創作。',tags:['AI 創意','跨域整合','未來科技'],learn:['從真實生活發現想解決的問題','結合兩種以上科技工具','分享構想並改進設計'],outcome:'設計一份幫助生活的小發明提案。',q:'想讓科技創作真正幫助使用者，應先了解什麼？',choices:['使用者的問題與需求','外盒要用哪種顏色','一定要使用最昂貴設備'],correct:0,reason:'先理解需求，才能設計出真正有用途的科技作品。'}
+  ];
+  const canvas = $('scene'), ctx = canvas.getContext('2d',{alpha:true});
+  const markerLayer = $('island-labels'), strip = $('island-strip');
+  let chosen = 0, tab = 'learn', panelVisible = true, tourTimer = null, answered = false;
+  let finished; try { finished = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]')); } catch(e) { finished = new Set(); }
+  let W=0,H=0,DPR=1;
+  let yaw=.23, elevation=.83, goalYaw=.23, goalElevation=.83;
+  let distance=48, goalDistance=48, target={x:0,y:0,z:0}, goalTarget={x:0,y:0,z:0};
+  let isDragging=false, pointerStart=null, moved=false, mouseLast=null, frame=0, lastT=0;
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const sceneFaces=[]; const markers=[];
+  const palette={rock:'#9bafac',stone:'#dce7dd',wood:'#c78d69',dark:'#2d5655',cream:'#fcf3d8',blue:'#85bbd8',yellow:'#f0c179',pink:'#e3a299',white:'#f3f8e9'};
+  const rgbCache={};
+  const rgb=(hex)=>{if(!rgbCache[hex]){const v=parseInt(hex.slice(1),16);rgbCache[hex]=[(v>>16)&255,(v>>8)&255,v&255];}return rgbCache[hex]};
+  function shade(hex, n){const c=rgb(hex);const mul=Math.max(0.25,Math.min(1.45,n));return `rgb(${Math.min(255,Math.round(c[0]*mul))},${Math.min(255,Math.round(c[1]*mul))},${Math.min(255,Math.round(c[2]*mul))})`}
+  function face(i,pts,color,light=1){sceneFaces.push({i,pts,color:shade(color,light)})}
+  const v=(x,y,z)=>({x,y,z});
+  function box(i,x,y,z,w,h,d,color,turn=0){const dx=w/2,dz=d/2,cy=Math.cos(turn),sy=Math.sin(turn);const T=(xx,yy,zz)=>v(x+xx*cy-zz*sy,y+yy,z+xx*sy+zz*cy);let a=[T(-dx,0,-dz),T(dx,0,-dz),T(dx,h,-dz),T(-dx,h,-dz),T(-dx,0,dz),T(dx,0,dz),T(dx,h,dz),T(-dx,h,dz)];face(i,[a[4],a[5],a[6],a[7]],color,1.02);face(i,[a[1],a[0],a[3],a[2]],color,.78);face(i,[a[0],a[4],a[7],a[3]],color,.85);face(i,[a[5],a[1],a[2],a[6]],color,.89);face(i,[a[3],a[7],a[6],a[2]],color,1.16);face(i,[a[0],a[1],a[5],a[4]],color,.72)}
+  function cylinder(i,x,y,z,ra,rb,h,color,n=8){const a=[],b=[];for(let j=0;j<n;j++){let t=(j/n)*Math.PI*2;a.push(v(x+Math.cos(t)*ra,y,z+Math.sin(t)*ra));b.push(v(x+Math.cos(t)*rb,y+h,z+Math.sin(t)*rb))}for(let j=0;j<n;j++){let k=(j+1)%n;face(i,[a[j],a[k],b[k],b[j]],color,.79+.28*Math.sin(j/n*Math.PI*2+1.3))}if(rb>0)face(i,b,color,1.12);if(ra>0)face(i,[...a].reverse(),color,.65)}
+  function cone(i,x,y,z,base,h,color,n=7){cylinder(i,x,y,z,base,0.02,h,color,n)}
+  function roof(i,x,y,z,w,d,h,color){let a=[v(x-w/2,y,z-d/2),v(x+w/2,y,z-d/2),v(x+w/2,y,z+d/2),v(x-w/2,y,z+d/2)],p=v(x,y+h,z);for(let j=0;j<4;j++)face(i,[a[j],a[(j+1)%4],p],color,.88+j*.07)}
+  function sphere(i,x,y,z,r,color,n=7){const layers=[{r:0,y:r},{r:r*.88,y:r*.52},{r:r,y:0},{r:r*.78,y:-r*.58},{r:0,y:-r}];for(let j=0;j<layers.length-1;j++){const A=layers[j],B=layers[j+1];for(let k=0;k<n;k++){const t=k/n*2*Math.PI,tt=(k+1)/n*2*Math.PI;face(i,[v(x+Math.cos(t)*A.r,y+A.y,z+Math.sin(t)*A.r),v(x+Math.cos(tt)*A.r,y+A.y,z+Math.sin(tt)*A.r),v(x+Math.cos(tt)*B.r,y+B.y,z+Math.sin(tt)*B.r),v(x+Math.cos(t)*B.r,y+B.y,z+Math.sin(t)*B.r)],color,.78+.28*Math.cos(t+1))}}}
+  function lineBlock(i,x1,y1,z1,x2,y2,z2,width,color){const dx=x2-x1,dz=z2-z1,length=Math.hypot(dx,dz)||.1, angle=-Math.atan2(dz,dx);box(i,(x1+x2)/2,Math.min(y1,y2),(z1+z2)/2,length,Math.max(.07,Math.abs(y2-y1)),width,color,-angle)}
+  function tree(i,x,z,s=1){cylinder(i,x,.74,z,.13*s,.11*s,.69*s,palette.wood,5);cone(i,x,1.19*s+.45,z,.57*s,.90*s,'#448a7b',6);cone(i,x,1.68*s+.27,z,.42*s,.71*s,'#63a98d',6);sphere(i,x+.15*s,1.49*s+.27,z-.1*s,.09*s,'#f0bd83',5)}
+  function flower(i,x,z,c='#e2a486'){cylinder(i,x,.77,z,.035,.025,.23,'#5d9b78',5);sphere(i,x,1.04,z,.115,c,5)}
+  function baseIsland(i,c){const r=i===0?3.22:2.54;const rings=[{y:.58,r:r},{y:.30,r:r*1.055},{y:-.40,r:r*.95},{y:-1.45,r:r*.75},{y:-2.45,r:r*.46},{y:-3.22,r:r*.13}];const n=9;const a=(ring,k)=>{const t=k/n*Math.PI*2;const noise=1+Math.sin(k*5.1+i*3.7)*.045;return v(Math.cos(t)*ring.r*noise,ring.y,Math.sin(t)*ring.r*noise)};for(let j=0;j<rings.length-1;j++)for(let k=0;k<n;k++){const next=(k+1)%n;const clr=j<1?'#789d8f':j<3?'#9facab':'#8c9ca0';face(i,[a(rings[j],k),a(rings[j],next),a(rings[j+1],next),a(rings[j+1],k)],clr,.69+Math.sin(k*.9+j*.8)*.18+j*.015)}cylinder(i,0,.53,0,r*.99,r*.985,.27,c.grass,9);cylinder(i,0,.48,0,r*1.01,r*.995,.12,'#4f9582',9);
+    const places=i===0?[[-2.4,-.75],[2.45,1.15],[-1.75,2.1]]:[[-1.75,-1.05],[1.65,1.23]];
+    places.forEach(([x,z],j)=>tree(i,x,z,j===0?.72:.57));
+    flower(i,-1.1,1.53,'#efd1a4');flower(i,1.25,-1.62,'#ecad9c');
+  }
+  function door(i,x,y,z,w=0.44,h=.65){box(i,x,y,z,w,h,.035,'#526f67')}
+  function school(i){box(i,0,.80,0,2.38,1.40,1.66,'#f2e6c9');box(i,0,2.16,0,2.6,.14,1.9,'#b97965');roof(i,0,2.30,0,2.75,2.1,.92,'#d98e72');box(i,0,.81,.86,.48,.88,.07,'#739b93');[-.7,.7].forEach(x=>{box(i,x,1.37,.865,.38,.4,.06,'#84b6b0');box(i,x,1.37,-.86,.38,.4,.06,'#84b6b0')});cylinder(i,0,3.17,0,.045,.045,.73,'#416b65',5);box(i,.25,3.55,0,.5,.30,.03,'#f1c87c');cylinder(i,0,.69,1.73,1.02,1.02,.12,'#eee3cb',8)}
+  function minecraft(i){box(i,-.40,.8,0,1.85,1.7,1.65,'#b8c9aa');box(i,-.4,2.42,0,2.05,.3,1.82,'#8caa8b');box(i,-.92,2.71,-.59,.56,.7,.56,'#9cb595');box(i,.15,2.71,-.59,.55,.7,.56,'#9cb595');box(i,-.4,.82,.84,.47,.85,.06,'#9e7a60');box(i,-1.06,1.63,.84,.38,.4,.06,'#7db9bd');box(i,.37,1.63,.84,.38,.4,.06,'#7db9bd');for(let k=0;k<3;k++)box(i,1.6-k*.18,.78+k*.26,-.5,.55,.28,.82,'#a9baa2');box(i,1.7,.80,.9,.5,.7,.4,'#d3aa74')}
+  function makecode(i){box(i,0,.80,0,2.2,1.35,.48,'#315e67');box(i,0,.86,.28,1.93,1.10,.055,'#83cfc0');for(let j=0;j<4;j++)box(i,-.52+j*.1,1.1+j*.2,.319,.75-j*.07,.075,.03,j%2?'#f0d394':'#eaf4db');box(i,0,.78,0,.46,.13,.52,'#f2e7cd');box(i,0,.67,.75,1.9,.12,.77,'#d1e2d8');for(let j=0;j<5;j++)box(i,-.65+j*.32,.82,1.16,.21,.035,.07,'#e3a778');box(i,1.43,1.2,-.42,.26,1.10,.26,'#e0c5a2');sphere(i,1.44,2.31,-.42,.23,'#f1c78b')}
+  function roblox(i){for(let j=0;j<5;j++){let x=-1.56+j*.73,z=j%2?-.27:.15,h=.22+j*.20;box(i,x,.8,z,.63,h,.73,j%2?'#e4a4a0':'#b7a2d0');}box(i,1.65,.8,.12,.32,1.9,.35,'#638f9d');box(i,1.65,2.65,.12,.86,.22,.58,'#efc381');box(i,1.32,.8,.7,.3,.5,.25,'#f3d9aa');sphere(i,-1.8,2.12,-.6,.27,'#e9bb84',6)}
+  function ai(i){cylinder(i,-.45,.79,-.15,1.22,1.15,.6,'#e8e2cc',9);sphere(i,-.45,1.35,-.15,1.04,'#9ac6ca',8);cylinder(i,-.45,.78,-.15,.9,.9,.12,'#ffffff',8);box(i,1.38,.8,.18,.62,1.1,.64,'#dde9d8');cylinder(i,1.35,1.88,.15,.30,.12,.3,'#c88d76',7);sphere(i,1.35,2.20,.15,.30,'#d8b6c5',6);box(i,-1.42,.82,1.12,.36,.73,.4,'#d8b38d')}
+  function scratch(i){box(i,-.1,.83,-.12,2.25,1.55,.34,'#fff1d4');box(i,-.1,.98,.085,1.91,1.2,.04,'#89c8c9');sphere(i,-.22,1.59,.16,.36,'#f0be78',7);box(i,-.57,1.25,.16,.19,.13,.04,'#f6f5e6');box(i,-.02,1.25,.16,.19,.13,.04,'#f6f5e6');box(i,-.1,.71,.16,.4,.13,.35,'#b6a3d3');box(i,1.4,.81,.5,.36,.76,.6,'#d5b19d');sphere(i,1.4,1.64,.5,.25,'#f4d193',6)}
+  function robot(i){box(i,0,.80,-.1,1.25,1.24,.83,'#7cb3b4');box(i,0,2.09,-.12,1.45,.89,.92,'#e7e5d7');box(i,-.35,2.48,.36,.18,.17,.08,'#3e7f82');box(i,.35,2.48,.36,.18,.17,.08,'#3e7f82');box(i,0,2.20,.36,.58,.07,.08,'#edb985');box(i,-.90,1.25,-.1,.32,1.02,.42,'#d5a187');box(i,.90,1.25,-.1,.32,1.02,.42,'#d5a187');box(i,-.34,.68,-.10,.36,.48,.5,'#496e73');box(i,.34,.68,-.10,.36,.48,.5,'#496e73');cylinder(i,0,2.94,-.12,.045,.045,.45,'#4d817b',5);sphere(i,0,3.4,-.12,.16,'#f2bf7e',6)}
+  function drone(i){cylinder(i,0,.78,0,1.4,1.4,.22,'#e4e5d4',9);cylinder(i,0,1,0,1.1,1.1,.07,'#83b5b3',9);box(i,0,1.1,0,2.0,.11,.13,'#547f89',Math.PI/4);box(i,0,1.1,0,2.0,.11,.13,'#547f89',-Math.PI/4);box(i,0,1.1,0,.85,.35,.65,'#f3ead8');const q=1.02;[[-q,-q],[q,-q],[-q,q],[q,q]].forEach(([x,z])=>{cylinder(i,x,1.15,z,.33,.33,.055,'#a6d7cf',7);cylinder(i,x,1.22,z,.13,.13,.06,'#dbb57e',7)});box(i,-.74,.78,1.24,.45,.3,.15,'#8db8ae')}
+  function maker(i){box(i,0,.8,-.25,2.1,1.63,1.45,'#e7e6d7');box(i,0,.92,.51,1.55,1.15,.065,'#82b5b2');box(i,0,1.40,.57,.58,.57,.08,'#e4b274');box(i,0,2.43,-.25,2.2,.20,1.58,'#8ba69e');box(i,-.96,1.10,.45,.14,1.38,.13,'#dc9978');box(i,.96,1.10,.45,.14,1.38,.13,'#dc9978');cylinder(i,1.4,.80,.95,.40,.38,.35,'#e9bb89',8);cylinder(i,-1.42,.81,.94,.32,.32,.45,'#d19bba',8)}
+  function logic(i){box(i,0,.8,0,2.8,.13,2.5,'#e4e8d1');const walls=[[-.86,-.6,.15,1],[-.20,-.6,.15,1],[.46,-.1,.15,1],[.9,.45,.15,.75],[-.54,.48,1.3,.15],[.35,-1,.15,.6]];walls.forEach(([x,z,w,d])=>box(i,x,.93,z,w,.53,d,'#7ca8a0'));sphere(i,-1.15,1.22,-.95,.20,'#e0ae77',6);box(i,1.0,.94,1.0,.33,.51,.33,'#cba6bc');box(i,-1.3,.81,1.35,.35,.28,.35,'#f0c28f')}
+  function showcase(i){cylinder(i,0,.78,0,1.62,1.62,.26,'#e4d3c6',9);box(i,0,1.06,-.38,2.2,1.18,.25,'#fff1d9');box(i,0,1.21,-.22,1.70,.72,.07,'#d2abc2');box(i,-.6,1.55,-.15,.33,.32,.06,'#f2dab3');box(i,.15,1.5,-.15,.52,.42,.06,'#b3dbd1');cylinder(i,0,1.09,1.02,.55,.49,.39,'#d4ac81',8);cylinder(i,0,1.45,1.02,.26,.20,.48,'#f4cc7c',8);sphere(i,0,2.02,1.02,.33,'#f2c87d',7);box(i,0,2.30,1.02,.08,.35,.09,'#f2c87d')}
+  function future(i){cylinder(i,0,.80,0,.60,.55,1.95,'#f7eddc',9);cone(i,0,2.75,0,.57,.84,'#e5948b',9);cylinder(i,0,1.45,0,.61,.61,.18,'#83b3d0',9);sphere(i,0,2.10,.57,.28,'#90d0d2',7);box(i,-.65,1.0,0,.50,.92,.18,'#da9695');box(i,.65,1.0,0,.50,.92,.18,'#da9695');cone(i,0,.26,0,.38,.58,'#f2c27b',8);sphere(i,-1.45,2.25,-.3,.31,'#debbc7',7);sphere(i,1.50,1.95,1.1,.21,'#d7d5ad',7)}
+  const buildings=[school,minecraft,makecode,roblox,ai,scratch,robot,drone,maker,logic,showcase,future];
+  courses.forEach((c,i)=>{baseIsland(i,c);buildings[i](i)});
+  const perIsland=Array.from({length:12},()=>[]);sceneFaces.forEach(f=>perIsland[f.i].push(f));
+  // --- v2 World Builder: original low-poly geometry and user-built structures ---
+  const WORLD_KEY = 'yihwa-coding-islands-world-v2';
+  const PROP_NAMES={house:'小房子',tree:'小樹',flower:'花圃',lamp:'路燈',bench:'長椅',balloon:'氣球',sign:'旗幟',bridge:'島嶼橋梁'};
+  const sampleWorld=()=>({
+    props:[
+      {type:'house',i:0,x:1.85,z:-1.12},{type:'flower',i:0,x:-1.83,z:1.12},
+      {type:'lamp',i:1,x:1.65,z:1.17},{type:'sign',i:1,x:-1.53,z:1.43},
+      {type:'house',i:2,x:1.62,z:1.38},{type:'balloon',i:2,x:-1.42,z:1.45},
+      {type:'bench',i:3,x:1.82,z:1.15},{type:'flower',i:3,x:-1.38,z:1.62},
+      {type:'balloon',i:4,x:1.66,z:1.16},{type:'lamp',i:5,x:1.71,z:1.18},
+      {type:'bench',i:6,x:1.63,z:1.25},{type:'tree',i:7,x:1.66,z:-1.27},
+      {type:'flower',i:8,x:-1.76,z:1.02},{type:'house',i:9,x:1.60,z:1.35},
+      {type:'sign',i:10,x:1.72,z:1.16},{type:'balloon',i:11,x:-1.51,z:1.48}
+    ],
+    bridges:[[0,1],[1,2],[0,5]]
+  });
+  function sanitizeWorld(data){
+    if(!data||!Array.isArray(data.props)||!Array.isArray(data.bridges))return null;
+    const props=data.props.filter(p=>p&&PROP_NAMES[p.type]&&p.type!=='bridge'&&Number.isInteger(p.i)&&p.i>=0&&p.i<12&&Number.isFinite(p.x)&&Number.isFinite(p.z)&&Math.hypot(p.x,p.z)<2.4).slice(0,120)
+      .map(p=>({type:p.type,i:p.i,x:p.x,z:p.z}));
+    const bridges=data.bridges.filter(pair=>Array.isArray(pair)&&pair.length===2&&pair.every(x=>Number.isInteger(x)&&x>=0&&x<12)&&pair[0]!==pair[1]
+      &&Math.hypot(courses[pair[0]].pos[0]-courses[pair[1]].pos[0],courses[pair[0]].pos[1]-courses[pair[1]].pos[1])<13.6).slice(0,24);
+    return {props,bridges};
+  }
+  let world;
+  try{const saved=localStorage.getItem(WORLD_KEY);world=saved===null?sampleWorld():sanitizeWorld(JSON.parse(saved))||sampleWorld()}
+  catch(e){world=sampleWorld()}
+  let propFaces=Array.from({length:12},()=>[]),bridgeFaces=[];
+  let builderOpen=false,activeTool=null,pendingBridge=null,hoverPoint=null;
+  const worldHistory=[];
+  const snapshotWorld=()=>JSON.parse(JSON.stringify(world));
+  function saveWorld(){try{localStorage.setItem(WORLD_KEY,JSON.stringify(world))}catch(e){}}
+  function rememberWorld(){worldHistory.push(snapshotWorld());if(worldHistory.length>40)worldHistory.shift()}
+  function littleHouse(i,x,z){
+    const y=.79;box(i,x,y,z,1.0,.67,.82,'#f4dfbd');box(i,x,y+.67,z,1.13,.11,.93,'#d98d74');
+    roof(i,x,y+.79,z,1.22,1.04,.58,'#d57c65');
+    box(i,x,y+.01,z+.43,.24,.43,.052,'#7b9f9a');
+    box(i,x-.31,y+.3,z+.43,.18,.18,.046,'#8ac7cb');box(i,x+.31,y+.3,z+.43,.18,.18,.046,'#8ac7cb');
+    box(i,x-.37,y+.32,z-.43,.17,.18,.042,'#8ac7cb');
+    cylinder(i,x+.29,y+.79,z-.25,.09,.09,.43,'#cf9a80',5);
+  }
+  function decoratedTree(i,x,z){tree(i,x,z,.83);sphere(i,x-.13,1.63,z+.11,.105,'#eebd79',6);sphere(i,x+.2,1.85,z-.11,.085,'#f2b9a0',6)}
+  function littleFlowers(i,x,z){
+    const a=['#e8a9a0','#f5c77f','#d7b4dd','#e9b2b5','#ffdb8a'];
+    for(let k=0;k<5;k++){const t=k*Math.PI*2/5;flower(i,x+Math.cos(t)*.30,z+Math.sin(t)*.27,a[k])}
+  }
+  function littleLamp(i,x,z){
+    cylinder(i,x,.76,z,.09,.075,1.38,'#547e83',6);
+    cylinder(i,x,2.11,z,.28,.20,.34,'#f8d696',7);
+    cone(i,x,2.44,z,.33,.21,'#517a7a',7);
+    sphere(i,x,2.23,z,.23,'#f9dea7',7);
+  }
+  function littleBench(i,x,z){
+    box(i,x,.93,z,.94,.13,.39,'#c58e70');box(i,x,.97,z-.24,.94,.56,.12,'#c58e70');
+    for(const dx of [-.34,.34])for(const dz of [-.14,.14])box(i,x+dx,.75,z+dz,.10,.25,.09,'#637b75');
+  }
+  function littleBalloon(i,x,z){
+    cylinder(i,x,.77,z,.048,.04,1.80,'#8b9f92',6);
+    sphere(i,x,2.60,z,.36,'#ef9c9e',8);
+    sphere(i,x+.28,2.34,z+.15,.28,'#a7c6e5',7);
+    sphere(i,x-.28,2.40,z-.10,.28,'#f4ce8c',7);
+  }
+  function littleSign(i,x,z){
+    cylinder(i,x,.75,z,.075,.065,1.35,'#947861',6);
+    box(i,x+.20,1.53,z,.62,.42,.07,'#efc480');
+    box(i,x+.29,1.59,z+.045,.17,.07,.035,'#ffffff');
+    box(i,x+.13,1.44,z+.045,.22,.06,.035,'#ffffff');
+  }
+  const PROP_BUILDERS={house:littleHouse,tree:decoratedTree,flower:littleFlowers,lamp:littleLamp,bench:littleBench,balloon:littleBalloon,sign:littleSign};
+  function bridgeEndpoints(pair){
+    const a=courses[pair[0]].pos,b=courses[pair[1]].pos;
+    const dx=b[0]-a[0],dz=b[1]-a[1],dist=Math.hypot(dx,dz),ux=dx/dist,uz=dz/dist;
+    return {a:{x:a[0]+ux*2.42,z:a[1]+uz*2.42},b:{x:b[0]-ux*2.42,z:b[1]-uz*2.42},ux,uz,dist};
+  }
+  function makeBridge(pair){
+    const {a,b,ux,uz}=bridgeEndpoints(pair),dx=b.x-a.x,dz=b.z-a.z,L=Math.hypot(dx,dz),n=Math.max(3,Math.ceil(L/.39));
+    const theta=Math.atan2(dz,dx),px=-uz,pz=ux;
+    box(-1,(a.x+b.x)/2,.70,(a.z+b.z)/2,L,.11,.89,'#b78560',theta);
+    for(let j=0;j<n;j++){
+      const s=(j+.5)/n,x=a.x+dx*s,z=a.z+dz*s;
+      box(-1,x,.80,z,L/n*.87,.065,.99,j%3===0?'#e9ba82':'#d9a679',theta);
+    }
+    for(let side of [-1,1]){
+      const ox=px*side*.56,oz=pz*side*.56;
+      box(-1,(a.x+b.x)/2+ox,1.24,(a.z+b.z)/2+oz,L,.095,.10,'#9a765d',theta);
+      for(let j=0;j<=Math.ceil(L/1.15);j++){
+        const s=j/Math.ceil(L/1.15),x=a.x+dx*s+ox,z=a.z+dz*s+oz;
+        box(-1,x,.76,z,.115,.57,.13,'#aa8269');
+        sphere(-1,x,1.32,z,.083,'#f5ce96',5);
+      }
+    }
+  }
+  function rebuildWorldGeometry(){
+    propFaces=Array.from({length:12},()=>[]);bridgeFaces=[];
+    const prior=sceneFaces.length;
+    for(const p of world.props){PROP_BUILDERS[p.type](p.i,p.x,p.z);propFaces[p.i].push(...sceneFaces.splice(prior))}
+    for(const pair of world.bridges){makeBridge(pair);bridgeFaces.push(...sceneFaces.splice(prior))}
+    saveWorld();updateBuilderUI();
+  }
+  function updateBuilderUI(){
+    const count=world.props.length+world.bridges.length;
+    $('builder-count').textContent=`${count} 件作品`;
+    $('builder-undo').disabled=worldHistory.length===0;
+    document.querySelectorAll('.prop-tile').forEach(b=>{const active=b.dataset.prop===activeTool;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});
+    const status=$('builder-status');
+    status.classList.toggle('pending',activeTool==='bridge'&&pendingBridge!==null);
+    if(!activeTool)status.textContent='先選一個物件，就能開始建造。';
+    else if(activeTool==='bridge'&&pendingBridge!==null)status.textContent=`已選「${courses[pendingBridge].short}」→ 再點另一座附近的島，完成連接！`;
+    else if(activeTool==='bridge')status.textContent='橋梁模式：先選第一座島，再選第二座鄰近的島。';
+    else status.textContent=`目前：${PROP_NAMES[activeTool]} · 點擊島嶼上想放置的位置（可重複放置）。`;
+  }
+  function toggleIntro(force){
+    const el=$('intro-card');const collapsed=typeof force==='boolean'?force:!el.classList.contains('is-collapsed');
+    el.classList.toggle('is-collapsed',collapsed);$('intro-toggle').setAttribute('aria-expanded',String(!collapsed));
+    $('intro-toggle-icon').textContent=collapsed?'›':'‹';$('intro-toggle-text').textContent=collapsed?'展開介紹':'收合介紹';
+  }
+  function toggleBuilder(force){
+    builderOpen=typeof force==='boolean'?force:!builderOpen;
+    $('builder-dock').classList.toggle('is-open',builderOpen);$('builder-panel').classList.toggle('is-hidden',!builderOpen);
+    $('builder-toggle').setAttribute('aria-expanded',String(builderOpen));$('builder-toggle-arrow').textContent=builderOpen?'⌄':'⌃';
+    if(builderOpen){toggleIntro(true);stopTour()}
+    else{activeTool=null;pendingBridge=null;hoverPoint=null}
+    document.body.classList.toggle('is-placing',builderOpen&&!!activeTool);
+    updateBuilderUI();
+  }
+  function selectTool(type){
+    if(!builderOpen)toggleBuilder(true);
+    activeTool=activeTool===type?null:type;pendingBridge=null;hoverPoint=null;
+    document.body.classList.toggle('is-placing',!!activeTool);updateBuilderUI();
+  }
+  function unprojectAtHeight(screenX,screenY,y=.80){
+    const ce=Math.cos(elevation),se=Math.sin(elevation),cy=Math.cos(yaw),sy=Math.sin(yaw);
+    const cx=W*(mobile()?.50:.52),cY=H*(mobile()?.73:.50);
+    const focal=Math.min(W*(mobile()?1.35:1.07),H*(mobile()?1.23:1.57));
+    const dy=(cY-screenY)/focal,yy=y-target.y;
+    const denom=dy*ce-se;
+    if(Math.abs(denom)<.002)return null;
+    const hor=(dy*distance-yy*(dy*se+ce))/denom;
+    const depth=hor*ce+yy*se,scale=focal/Math.max(6,distance-depth);
+    const side=(screenX-cx)/scale;
+    return {x:target.x+side*cy+hor*sy,z:target.z+hor*cy-side*sy};
+  }
+  function pickIslandAt(x,y){
+    const point=unprojectAtHeight(x,y);if(!point)return null;
+    let picked=-1,best=999;
+    for(let i=0;i<12;i++){
+      const c=courses[i],d=Math.hypot(point.x-c.pos[0],point.z-c.pos[1]);
+      if(d<best){best=d;picked=i}
+    }
+    return best<=(picked===0?3.18:2.54)?{i:picked,x:point.x-courses[picked].pos[0],z:point.z-courses[picked].pos[1]}:null;
+  }
+  function placeOnIsland(i,local){
+    if(!activeTool)return false;
+    if(activeTool==='bridge'){
+      if(pendingBridge===null){pendingBridge=i;updateBuilderUI();toast(`起點：${courses[i].short}，再點另一座島`);return true}
+      if(i===pendingBridge){pendingBridge=null;updateBuilderUI();toast('已取消橋梁起點');return true}
+      const d=Math.hypot(courses[pendingBridge].pos[0]-courses[i].pos[0],courses[pendingBridge].pos[1]-courses[i].pos[1]);
+      if(d>13.6){toast('距離太遠，請選附近的島嶼連接');return true}
+      const key=[pendingBridge,i].sort((a,b)=>a-b);
+      if(world.bridges.some(b=>b[0]===key[0]&&b[1]===key[1])){toast('這兩座島已有橋梁');pendingBridge=null;updateBuilderUI();return true}
+      rememberWorld();world.bridges.push(key);pendingBridge=null;rebuildWorldGeometry();toast('連接成功！橋梁已建好 🌉');return true;
+    }
+    if(world.props.length>=120){toast('最多可以放置 120 件物件');return true}
+    const count=world.props.filter(p=>p.i===i).length;
+    if(count>=14){toast('這座島已經很熱鬧了，換一座島佈置吧！');return true}
+    let x,z;
+    if(local){x=local.x;z=local.z}else{const t=(count*2.39996+i*.92)+.3;x=Math.cos(t)*1.8;z=Math.sin(t)*1.8}
+    let rad=Math.hypot(x,z),angle=Math.atan2(z,x);
+    // Leave the centerpiece building clear, and keep objects away from island edges.
+    if(rad<1.5)rad=1.5;if(rad>2.05)rad=2.05;
+    x=Math.cos(angle)*rad;z=Math.sin(angle)*rad;
+    if(world.props.some(p=>p.i===i&&Math.hypot(p.x-x,p.z-z)<.65)){toast('附近已有物件，請換個位置');return true}
+    rememberWorld();world.props.push({type:activeTool,i,x:Number(x.toFixed(3)),z:Number(z.toFixed(3))});
+    rebuildWorldGeometry();toast(`已在「${courses[i].short}」放置${PROP_NAMES[activeTool]}`);return true;
+  }
+  function builderIslandClick(i,local){if(builderOpen&&activeTool){placeOnIsland(i,local);return true}return false}
+  function startBuilder(){
+    $('intro-toggle').addEventListener('click',()=>toggleIntro());
+    $('builder-toggle').addEventListener('click',()=>toggleBuilder());
+    $('builder-exit').addEventListener('click',()=>toggleBuilder(false));
+    document.querySelectorAll('.prop-tile').forEach(b=>{
+      b.draggable=true;
+      b.addEventListener('click',()=>selectTool(b.dataset.prop));
+      b.addEventListener('dragstart',e=>{
+        if(!builderOpen)toggleBuilder(true);
+        activeTool=b.dataset.prop;pendingBridge=null;hoverPoint=null;
+        document.body.classList.add('is-placing');updateBuilderUI();
+        if(e.dataTransfer){e.dataTransfer.effectAllowed='copy';e.dataTransfer.setData('text/plain',activeTool)}
+      });
+    });
+    $('builder-undo').addEventListener('click',()=>{if(!worldHistory.length)return;world=worldHistory.pop();pendingBridge=null;rebuildWorldGeometry();toast('已撤銷上一步建造')});
+    $('builder-clear').addEventListener('click',()=>{if(!world.props.length&&!world.bridges.length)return;
+      if(!confirm('確定清空所有自行擺放的房子、樹木、橋梁等物件嗎？原本的課程島嶼會保留。'))return;
+      rememberWorld();world={props:[],bridges:[]};pendingBridge=null;rebuildWorldGeometry();toast('已清空建造物件')});
+    $('builder-sample').addEventListener('click',()=>{rememberWorld();world=sampleWorld();pendingBridge=null;rebuildWorldGeometry();toast('已加入範例橋梁與裝飾！')});
+    rebuildWorldGeometry();
+  }
+  function makeWalker(i,x,z,t,phase=0,isGuide=false){
+    const bob=prefersReduced?0:Math.abs(Math.sin(t*.009+phase))*0.072;
+    const shirt=isGuide?'#f5c979':['#da9c96','#82b8ca','#b7a0d6','#e9bf7e','#91bfab'][i%5];
+    const pants=['#456d76','#5d727a','#6d7791'][i%3],skin=['#f0cbaa','#e3b690','#f2d6af'][i%3];
+    const a=t*.0016+phase,step=prefersReduced?0:Math.sin(t*.009+phase)*.13;
+    const xx=courses[i].pos[0]+x,zz=courses[i].pos[1]+z,base=.81+bob;
+    box(-1,xx-.115,base,zz+step,.16,.34,.17,pants);
+    box(-1,xx+.115,base,zz-step,.16,.34,.17,pants);
+    box(-1,xx,base+.32,zz,.46,.52,.32,shirt);
+    box(-1,xx-.31,base+.36,zz-step*.7,.13,.42,.16,skin);
+    box(-1,xx+.31,base+.36,zz+step*.7,.13,.42,.16,skin);
+    sphere(-1,xx,base+.98,zz,.245,skin,7);
+    sphere(-1,xx,base+1.15,zz-.05,.225,isGuide?'#724e44':['#665047','#58493c','#70514b'][i%3],7);
+    // Eye detail appears on the forward-facing side of the low-poly face.
+    box(-1,xx-.09,base+1.00,zz+.223,.045,.055,.04,'#3e5753');
+    box(-1,xx+.09,base+1.00,zz+.223,.045,.055,.04,'#3e5753');
+    if(isGuide){box(-1,xx,base+1.38,zz,.55,.10,.49,'#e8c382');box(-1,xx,base+1.41,zz,.39,.13,.42,'#44665e')}
+  }
+  const residents=[];
+  for(let i=0;i<12;i++)for(let j=0;j<(i===0?3:2);j++)residents.push({i,phase:(i*2.21+j*2.83),radius:(j%2?1.91:1.66),speed:(j%2?-1:1)*(.00023+(i%3)*.000031),guide:i===0&&j===0});
+  function buildAnimatedResidents(t){
+    const prior=sceneFaces.length;
+    for(const r of residents){
+      const a=t*r.speed+r.phase;
+      const x=Math.cos(a)*r.radius,z=Math.sin(a)*r.radius;
+      makeWalker(r.i,x,z,t,r.phase,r.guide);
+    }
+    // People also walk across bridges: they travel back and forth on each new walkway.
+    world.bridges.slice(0,10).forEach((pair,k)=>{
+      const ep=bridgeEndpoints(pair),s=(Math.sin(t*.00065+k*1.7)+1)/2;
+      const worldX=ep.a.x+(ep.b.x-ep.a.x)*s,worldZ=ep.a.z+(ep.b.z-ep.a.z)*s;
+      // Walker uses a relative coordinate in the first island's coordinate frame.
+      makeWalker(pair[0],worldX-courses[pair[0]].pos[0],worldZ-courses[pair[0]].pos[1],t,k*1.61);
+    });
+    return sceneFaces.splice(prior);
+  }
+
+  const labelNodes=[];
+  courses.forEach((c,i)=>{
+    const label=document.createElement('button');label.type='button';label.className='island-marker';label.innerHTML=`<span class="marker-index">${String(c.id).padStart(2,'0')}</span><span>${c.short}</span>`;label.setAttribute('aria-label',`探索${c.name}`);label.addEventListener('click',e=>{e.stopPropagation();if(!builderIslandClick(i,null))selectIsland(i,true)});markerLayer.appendChild(label);labelNodes.push(label);
+    const chip=document.createElement('button');chip.type='button';chip.className='strip-item';chip.dataset.index=i;chip.innerHTML=`<span class="strip-number">${String(c.id).padStart(2,'0')}</span><span class="strip-title">${c.short}</span><span class="strip-complete" aria-hidden="true"></span>`;chip.addEventListener('click',()=>{if(!builderIslandClick(i,null))selectIsland(i,true)});strip.appendChild(chip);
+  });
+  function updateBadgeUI(){const count=finished.size;$('nav-count').textContent=`${count}/12`;$('hero-progress').innerHTML=`${count}<span>/12</span>`;$('passport-number').textContent=`${count} / 12`;$('passport-bar').style.width=`${count/12*100}%`;const grid=$('badge-grid');grid.innerHTML='';courses.forEach((c,i)=>{const btn=document.createElement('button');btn.type='button';btn.className='badge-item'+(finished.has(c.id)?' complete':'');btn.innerHTML=`<span class="badge-icon">${c.icon}</span><span>${c.short}</span><span>${finished.has(c.id)?'✓ 已完成':'尚未解鎖'}</span>`;btn.addEventListener('click',()=>{closeModal('passport');selectIsland(i,true);showTask()});grid.appendChild(btn)});courses.forEach((c,i)=>{labelNodes[i].classList.toggle('done',finished.has(c.id));const el=strip.children[i];el.querySelector('.strip-complete').textContent=finished.has(c.id)?'✓':''})}
+  let toastTimeout=0;
+  function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('visible');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>el.classList.remove('visible'),2800)}
+  function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify([...finished]))}catch(e){/* 受限瀏覽器僅在本次保留 */}}
+  function selectIsland(i,fly=false){chosen=(i+courses.length)%courses.length;const c=courses[chosen];$('panel-step').textContent=`${String(c.id).padStart(2,'0')} / 12`;$('panel-art-number').textContent=`ISLAND ${String(c.id).padStart(2,'0')}`;$('course-category').textContent=`${c.kind} · ${c.en}`;$('course-name').textContent=c.name;$('course-description').textContent=c.desc;$('panel-icon').textContent=c.icon;$('panel-illustration').style.background=`linear-gradient(128deg, ${c.grass}65, #faf2e9 88%)`;$('panel-icon').style.color=c.color;$('course-tags').innerHTML='';c.tags.forEach(s=>{const tag=document.createElement('span');tag.textContent=s;$('course-tags').appendChild(tag)});$('learn-list').innerHTML='';c.learn.forEach(s=>{const li=document.createElement('li');li.textContent=s;$('learn-list').appendChild(li)});$('outcome-text').textContent=c.outcome;$('challenge-question').textContent=c.q;$('answers').innerHTML='';c.choices.forEach((text,k)=>{const btn=document.createElement('button');btn.className='answer-option';btn.type='button';btn.innerHTML=`<span class="answer-index">${String.fromCharCode(65+k)}</span><span></span>`;btn.querySelector('span:last-child').textContent=text;btn.addEventListener('click',()=>answer(k));$('answers').appendChild(btn)});answered=false;$('answer-feedback').textContent='';$('answer-feedback').className='answer-feedback';if(finished.has(c.id)){$('answer-feedback').textContent='✓ 這座島的徽章已收集，可再次練習。';$('answer-feedback').classList.add('success')}
+    labelNodes.forEach((b,j)=>b.classList.toggle('selected',j===chosen));[...strip.children].forEach((b,j)=>b.classList.toggle('active',j===chosen));$('panel-progress-label').textContent=`${String(chosen+1).padStart(2,'0')} — 12`;setTab('learn');panelVisible=true;$('course-panel').classList.remove('closed');$('open-panel').classList.add('is-hidden');
+    if(fly){goalTarget={x:c.pos[0],y:0,z:c.pos[1]};goalDistance=window.innerWidth<=700?20:22;let chip=strip.children[chosen];chip.scrollIntoView({behavior:'smooth',inline:'nearest',block:'nearest'})}
+  }
+  function answer(index){const c=courses[chosen],buttons=[...$('answers').children];if(answered)return;const correct=index===c.correct;buttons.forEach((b,j)=>{b.disabled=true;if(j===c.correct)b.classList.add('correct');if(j===index&&!correct)b.classList.add('incorrect')});const f=$('answer-feedback');if(correct){answered=true;finished.add(c.id);save();updateBadgeUI();f.className='answer-feedback success';f.textContent=`✓ 任務成功！${c.reason}`;toast(`已收集「${c.short}」學習徽章！`);if(finished.size===12)toast('恭喜！12 座學習島全部探索完成。')}else{f.className='answer-feedback error';f.textContent=`再試試看！提示：${c.learn[0]}`;setTimeout(()=>{if(chosen===courses.indexOf(c)&&!answered){buttons.forEach(b=>{b.disabled=false;b.classList.remove('correct','incorrect')});f.textContent=''}},1000)}}
+  function setTab(which){tab=which;const task=which==='task';$('tab-learn').classList.toggle('active',!task);$('tab-task').classList.toggle('active',task);$('tab-learn').setAttribute('aria-selected',String(!task));$('tab-task').setAttribute('aria-selected',String(task));$('learn-content').classList.toggle('is-hidden',task);$('task-content').classList.toggle('is-hidden',!task)}
+  function showTask(){setTab('task');$('course-panel').scrollIntoView({behavior:'smooth',block:'nearest'})}
+  function openModal(which){const el=$(which+'-modal');el.classList.remove('is-hidden');if(which==='passport')updateBadgeUI();document.body.style.overflow='hidden';const closeBtn=el.querySelector('.modal-close');closeBtn.focus()}
+  function closeModal(which){$(which+'-modal').classList.add('is-hidden');if($('passport-modal').classList.contains('is-hidden')&&$('contact-modal').classList.contains('is-hidden'))document.body.style.overflow=''}
+  function overview(){goalTarget={x:0,y:0,z:0};goalDistance=window.innerWidth<=700?44:48;goalYaw=.23;goalElevation=.83}
+  function stopTour(){clearInterval(tourTimer);tourTimer=null;$('start-tour').textContent='▶ 自動導覽'}
+  function toggleTour(){if(tourTimer){stopTour();return}let i=chosen;selectIsland(i,true);$('start-tour').textContent='Ⅱ 暫停導覽';tourTimer=setInterval(()=>{i=(i+1)%12;selectIsland(i,true)},4500);toast('自動導覽已開始，可隨時按「暫停導覽」。')}
+  $('start-explore').addEventListener('click',()=>selectIsland(1,true));$('start-tour').addEventListener('click',toggleTour);$('nav-explore').addEventListener('click',()=>{stopTour();overview();closeModal('passport')});$('nav-challenges').addEventListener('click',()=>openModal('passport'));$('contact-button').addEventListener('click',()=>openModal('contact'));$('brand-home').addEventListener('click',e=>{e.preventDefault();overview()});$('tab-learn').addEventListener('click',()=>setTab('learn'));$('tab-task').addEventListener('click',showTask);$('go-task').addEventListener('click',showTask);$('prev-island').addEventListener('click',()=>{stopTour();selectIsland(chosen-1,true)});$('next-island').addEventListener('click',()=>{stopTour();selectIsland(chosen+1,true)});$('panel-close').addEventListener('click',()=>{panelVisible=false;$('course-panel').classList.add('closed');$('open-panel').classList.remove('is-hidden')});$('open-panel').addEventListener('click',()=>{panelVisible=true;$('course-panel').classList.remove('closed');$('open-panel').classList.add('is-hidden')});$('zoom-in').addEventListener('click',()=>goalDistance=Math.max(13,goalDistance-6));$('zoom-out').addEventListener('click',()=>goalDistance=Math.min(72,goalDistance+6));$('overview').addEventListener('click',()=>{stopTour();overview()});$('strip-next').addEventListener('click',()=>strip.scrollBy({left:330,behavior:'smooth'}));$('passport-close').addEventListener('click',()=>closeModal('passport'));$('contact-close').addEventListener('click',()=>closeModal('contact'));$('passport-explore').addEventListener('click',()=>closeModal('passport'));$('reset-progress').addEventListener('click',()=>{if(confirm('要清除這個瀏覽器中的所有任務徽章嗎？')){finished.clear();save();updateBadgeUI();toast('本機任務紀錄已清除')}});['passport','contact'].forEach(x=>$(x+'-modal').addEventListener('click',e=>{if(e.target===$(x+'-modal'))closeModal(x)}));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal('passport');closeModal('contact');stopTour()}if(!e.target.closest('input,textarea')&&!e.target.closest('[role="dialog"]')){if(e.key==='ArrowRight'){e.preventDefault();selectIsland(chosen+1,true)}if(e.key==='ArrowLeft'){e.preventDefault();selectIsland(chosen-1,true)}}});
+  const mobile=()=>window.innerWidth<=700;
+  function resize(){const rect=canvas.getBoundingClientRect();W=Math.max(1,Math.floor(rect.width));H=Math.max(1,Math.floor(rect.height));DPR=Math.min(2,window.devicePixelRatio||1);canvas.width=Math.round(W*DPR);canvas.height=Math.round(H*DPR);ctx.setTransform(DPR,0,0,DPR,0,0)}
+  window.addEventListener('resize',()=>{resize();if(mobile()&&goalDistance>58)goalDistance=44});
+  function project(p){const xx=p.x-target.x,yy=p.y-target.y,zz=p.z-target.z;const cy=Math.cos(yaw),sy=Math.sin(yaw),ce=Math.cos(elevation),se=Math.sin(elevation);const hor=xx*sy+zz*cy;const side=xx*cy-zz*sy;const vert=yy*ce-hor*se;const depth=hor*ce+yy*se;const focal=Math.min(W*(mobile()?1.35:1.07),H*(mobile()?1.23:1.57));const scale=focal/Math.max(6,distance-depth);const cx=W*(mobile()?.50:.52),cY=H*(mobile()?.73:.50);return {x:cx+side*scale,y:cY-vert*scale,depth,scale}}
+  function islandWorld(i,pt,t){const c=courses[i],bob=prefersReduced?0:Math.sin(t*.0012+i*.8)*.085;return {x:pt.x+c.pos[0],y:pt.y+bob,z:pt.z+c.pos[1]}}
+  function drawBackdrop(t){ctx.clearRect(0,0,W,H);ctx.save();ctx.globalAlpha=.18;ctx.strokeStyle='#84c2af';ctx.lineWidth=1;const cen=project(v(0,-4.6,0));for(let r=9;r<=27;r+=9){ctx.beginPath();for(let j=0;j<=90;j++){const a=j/90*Math.PI*2,p=project(v(Math.cos(a)*r,-4.7,Math.sin(a)*r));if(j===0)ctx.moveTo(p.x,p.y);else ctx.lineTo(p.x,p.y)}ctx.stroke()};ctx.restore();ctx.save();ctx.globalAlpha=.30;for(let k=0;k<9;k++){const x=((k*179+35)%W),y=((k*89+68)%H),w=85+(k%3)*38;ctx.fillStyle='#ffffff';ctx.beginPath();ctx.ellipse(x+Math.sin(t*.00015+k)*13,y,w,13,0,0,Math.PI*2);ctx.fill()}ctx.restore()}
+  const allFaces=[];
+  function render(t){frame++;let dt=Math.min(40,t-lastT||16);lastT=t;const ease=prefersReduced?1:.085;yaw+=(goalYaw-yaw)*ease;elevation+=(goalElevation-elevation)*ease;distance+=(goalDistance-distance)*ease;target.x+=(goalTarget.x-target.x)*ease;target.y+=(goalTarget.y-target.y)*ease;target.z+=(goalTarget.z-target.z)*ease;drawBackdrop(t);allFaces.length=0;
+    for(let i=0;i<12;i++){const c=courses[i];const center=project(v(c.pos[0],0,c.pos[1]));if(center.x<-300||center.x>W+300||center.y<-250||center.y>H+300)continue;for(const f of [...perIsland[i],...propFaces[i]]){const pts=f.pts.map(p=>project(islandWorld(i,p,t)));const depth=pts.reduce((a,b)=>a+b.depth,0)/pts.length;allFaces.push({pts,depth,color:f.color})}}
+    for(const f of bridgeFaces){const pts=f.pts.map(project);const depth=pts.reduce((a,b)=>a+b.depth,0)/pts.length;allFaces.push({pts,depth,color:f.color})}
+    for(const f of buildAnimatedResidents(t)){const pts=f.pts.map(project);const depth=pts.reduce((a,b)=>a+b.depth,0)/pts.length;allFaces.push({pts,depth,color:f.color})}
+    allFaces.sort((a,b)=>a.depth-b.depth);ctx.lineJoin='round';for(const f of allFaces){if(f.pts.every(p=>p.x<-80)||f.pts.every(p=>p.x>W+80)||f.pts.every(p=>p.y<-80)||f.pts.every(p=>p.y>H+80))continue;ctx.beginPath();ctx.moveTo(f.pts[0].x,f.pts[0].y);for(let k=1;k<f.pts.length;k++)ctx.lineTo(f.pts[k].x,f.pts[k].y);ctx.closePath();ctx.fillStyle=f.color;ctx.fill();ctx.strokeStyle='rgba(39,81,77,.085)';ctx.lineWidth=.6;ctx.stroke()}
+    if(builderOpen&&activeTool&&hoverPoint){
+      const h=hoverPoint,pt=project(v(courses[h.i].pos[0]+h.x,.89,courses[h.i].pos[1]+h.z));
+      if(pt.scale>4){ctx.save();ctx.strokeStyle=activeTool==='bridge'?'#d69c5a':'#47a480';ctx.fillStyle='rgba(255,255,255,.42)';ctx.lineWidth=2.5;ctx.setLineDash([4,4]);ctx.beginPath();ctx.ellipse(pt.x,pt.y,Math.max(8,pt.scale*.48),Math.max(4,pt.scale*.23),0,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.restore()}
+    }
+    // Selection ring and bright little sparkles make the active island easy to spot.
+    const c=courses[chosen],sp=project(v(c.pos[0],.72,c.pos[1]));if(sp.scale>6){ctx.save();ctx.strokeStyle='rgba(232,154,107,.85)';ctx.lineWidth=2;ctx.setLineDash([5,7]);ctx.beginPath();ctx.ellipse(sp.x,sp.y,2.98*sp.scale,1.4*sp.scale,-Math.sin(yaw)*.1,0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#edb276';for(let k=0;k<3;k++){let a=t*.0008+k*2.1;let x=sp.x+Math.cos(a)*sp.scale*3.2,y=sp.y+Math.sin(a)*sp.scale*1.55;ctx.globalAlpha=.65+.3*Math.sin(t*.002+k);ctx.beginPath();ctx.arc(x,y,2.7,0,Math.PI*2);ctx.fill()}ctx.restore()}
+    for(let i=0;i<12;i++){const c=courses[i],pos=project(v(c.pos[0],-3.65,c.pos[1])),el=labelNodes[i];let visible=(pos.x>35&&pos.x<W-35&&pos.y>175&&pos.y<H-95&&pos.scale>6);if(mobile()){visible=(pos.x>48&&pos.x<W-48&&pos.y>245&&pos.y<463&&pos.scale>6.5&& (distance<30?i===chosen: i===chosen||i===1||i===2||i===4))}el.style.display=visible?'flex':'none';if(visible){el.style.left=pos.x+'px';el.style.top=pos.y+'px';el.style.opacity=(distance<30&&i!==chosen)?'.5':'1'}}
+    requestAnimationFrame(render)
+  }
+  // Desktop drag-and-drop complements click-to-place; touch devices use tap-to-select.
+  canvas.addEventListener('dragover',e=>{if(!builderOpen)return;e.preventDefault();if(e.dataTransfer)e.dataTransfer.dropEffect='copy';const r=canvas.getBoundingClientRect();hoverPoint=pickIslandAt(e.clientX-r.left,e.clientY-r.top)});
+  canvas.addEventListener('dragleave',()=>{hoverPoint=null});
+  canvas.addEventListener('drop',e=>{if(!builderOpen)return;e.preventDefault();const type=e.dataTransfer?.getData('text/plain');if(PROP_NAMES[type]){activeTool=type;updateBuilderUI()}const r=canvas.getBoundingClientRect(),hit=pickIslandAt(e.clientX-r.left,e.clientY-r.top);if(hit)placeOnIsland(hit.i,{x:hit.x,z:hit.z});else toast('請將物件拖到島嶼草地上');hoverPoint=null});
+  canvas.addEventListener('pointerdown',e=>{if(e.button!==0)return;isDragging=true;moved=false;pointerStart={x:e.clientX,y:e.clientY};mouseLast={x:e.clientX,y:e.clientY};canvas.classList.add('dragging');canvas.setPointerCapture(e.pointerId);stopTour()});
+  canvas.addEventListener('pointermove',e=>{if(!isDragging){if(builderOpen&&activeTool){const rect=canvas.getBoundingClientRect();hoverPoint=pickIslandAt(e.clientX-rect.left,e.clientY-rect.top)}else hoverPoint=null;return}const dx=e.clientX-mouseLast.x,dy=e.clientY-mouseLast.y;if(Math.abs(e.clientX-pointerStart.x)+Math.abs(e.clientY-pointerStart.y)>6)moved=true;if(moved){goalYaw+=dx*.005;goalElevation=Math.max(.37,Math.min(1.3,goalElevation+dy*.004))}mouseLast={x:e.clientX,y:e.clientY}});
+  function pointerEnd(e){if(!isDragging)return;isDragging=false;canvas.classList.remove('dragging');if(!moved){const rect=canvas.getBoundingClientRect(),x=e.clientX-rect.left,y=e.clientY-rect.top;if(builderOpen&&activeTool){const hit=pickIslandAt(x,y);if(hit){placeOnIsland(hit.i,{x:hit.x,z:hit.z});return}toast('請點選島嶼草地的位置');return}let best=-1,bestD=1e12;for(let i=0;i<12;i++){let p=project(v(courses[i].pos[0],.72,courses[i].pos[1]));let d=Math.hypot((x-p.x)*.85,(y-p.y)*1.4);if(d<Math.max(35,p.scale*2.5)&&d<bestD){best=i;bestD=d}}if(best>=0)selectIsland(best,true)}}
+  canvas.addEventListener('pointerup',pointerEnd);canvas.addEventListener('pointercancel',()=>{isDragging=false;canvas.classList.remove('dragging')});canvas.addEventListener('wheel',e=>{e.preventDefault();goalDistance=Math.min(72,Math.max(13,goalDistance+Math.sign(e.deltaY)*2.4))},{passive:false});
+  resize();selectIsland(0,false);updateBadgeUI();startBuilder();if(mobile()){distance=44;goalDistance=44}requestAnimationFrame(render);
+})();
+
+</script>
 </body>
 </html>
